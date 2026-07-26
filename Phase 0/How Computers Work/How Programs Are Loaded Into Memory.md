@@ -1,11 +1,3 @@
-# How Programs Are Loaded Into Memory
-
-> **Phase 0 — Computer Science Fundamentals → 0.1 How Computers Work**
-> Goal: Understand the full journey from a file on disk to a running process in RAM — what the OS, the **loader**, and the CPU actually do to "run" a program.
-
----
-
-## 0. The One-Sentence Summary
 
 A program on disk is just a **passive file** (machine code + data + metadata). To *run* it, the OS creates a **process**, the **loader** copies/maps the file's pieces into a virtual address space, sets up the stack/heap, wires up shared libraries, and finally jumps the CPU to the program's entry point.
 

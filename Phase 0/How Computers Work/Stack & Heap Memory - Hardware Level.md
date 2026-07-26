@@ -1,11 +1,3 @@
-# Stack Memory vs Heap Memory (Hardware Level)
-
-> **Phase 0 — Computer Science Fundamentals → 0.1 How Computers Work**
-> Goal: Understand what "stack" and "heap" actually *are* at the level of RAM, the CPU, and the OS — **before** we ever talk about how Java uses them.
-
----
-
-## 0. The One-Sentence Summary
 
 - **Stack** = a small, fast, *automatically managed* region of memory that grows and shrinks as functions are called and return. The CPU has a dedicated register (the **stack pointer**) for it.
 - **Heap** = a large, flexible, *manually/runtime managed* region of memory used for data whose size or lifetime isn't known at compile time. Allocation is requested explicitly from the OS/runtime.

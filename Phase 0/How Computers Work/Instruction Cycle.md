@@ -1,12 +1,3 @@
-# Instruction Cycle (Fetch, Decode, Execute)
-
-> **Phase 0 — Computer Science Fundamentals → 0.1 How Computers Work**
-> Goal: Understand the fundamental loop a CPU repeats billions of times per second to run *any* program — the heartbeat of computation.
-
----
-
-## 0. The One-Sentence Summary
-
 The **instruction cycle** (a.k.a. **fetch–decode–execute cycle** or **machine cycle**) is the continuous loop a CPU performs: **fetch** the next instruction from memory, **decode** what it means, **execute** it, then (often) **store** the result — and repeat, forever, until the program ends or the machine halts.
 
 ---

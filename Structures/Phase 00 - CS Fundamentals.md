@@ -7,14 +7,14 @@ Follow the structure down.
 #### HOW COMPUTERS WORK
 1. [[Binary, Bits, Bytes & Word Size]]
 2. [[CPU Architecture Basics]]
-3. [[03-Instruction-Cycle-Fetch-Decode-Execute]]
-4. [[04-RAM-vs-ROM-vs-Storage]]
-5. [[05-Stack-vs-Heap-Memory-Hardware-Level]]
-6. [[06-How-Programs-Are-Loaded-Into-Memory]]
-7. [[07-Process-vs-Thread-OS-Level]]
-8. [[08-Virtual-Memory-and-Paging]]
+3. [[Instruction Cycle]]
+4. [[RAM, ROM & Storage]]
+5. [[Stack & Heap Memory - Hardware Level]]
+6. [[How Programs Are Loaded Into Memory]]
+7. [[Process & Thread - OS Level]]
+8. [[Virtual Memory & Paging]]
 9. [[09-Context-Switching]]
-10. [[10-IO-Operations-Blocking-vs-Non-Blocking-Hardware-Level]]
+10. [[IO Operations]]
 
 #### NETWORKING FUNDAMENTALS
 1. [[01-OSI-and-TCP-IP-Models]]

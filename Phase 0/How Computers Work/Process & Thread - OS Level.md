@@ -1,11 +1,3 @@
-# Process vs Thread (at the OS Level)
-
-> **Phase 0 — Computer Science Fundamentals → 0.1 How Computers Work**
-> Goal: Understand what a **process** and a **thread** really are to the operating system — their memory, scheduling, and trade-offs — *before* we touch Java threads.
-
----
-
-## 0. The One-Sentence Summary
 
 - A **process** is a running program with its **own private memory space** and resources — isolated from other processes.
 - A **thread** is a unit of execution that lives **inside** a process and **shares that process's memory** with sibling threads, but has its **own stack and registers**.

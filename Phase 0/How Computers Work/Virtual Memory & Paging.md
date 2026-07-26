@@ -1,11 +1,3 @@
-# Virtual Memory and Paging
-
-> **Phase 0 — Computer Science Fundamentals → 0.1 How Computers Work**
-> Goal: Understand how the OS + CPU give every process its own huge, private, contiguous-looking memory — even though physical RAM is small, shared, and fragmented.
-
----
-
-## 0. The One-Sentence Summary
 
 **Virtual memory** is an abstraction: each process sees its own large, private, contiguous **virtual address space**, while the OS + hardware **MMU** transparently map those virtual addresses to scattered **physical RAM** (and sometimes disk). **Paging** is the mechanism that makes this work by splitting memory into fixed-size chunks called **pages**.
 
