@@ -8,20 +8,35 @@
         "type": "tabs",
         "children": [
           {
-            "id": "7290fddfd48a63f5",
+            "id": "86581bbf76d99ef8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Phase 0/How Computers Work/09-Context-Switching.md",
+                "file": "Levels/PHASE 00/Understanding the Software Industry.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "09-Context-Switching"
+              "title": "Understanding the Software Industry"
+            }
+          },
+          {
+            "id": "3bff61400848f38f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Tools Setup.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Tools Setup"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -131,11 +146,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Tools Setup.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from Tools Setup"
             }
           },
           {
@@ -200,44 +216,44 @@
       "bases:Create new base": false
     }
   },
-  "active": "83007a773d72ef69",
+  "active": "3bff61400848f38f",
   "lastOpenFiles": [
-    "Phase 0/How Computers Work/09-Context-Switching.md",
-    "Structures/Phase 01 - Java.md",
-    "Structures/Phase 00 - CS Fundamentals.md",
-    "Phase 0/How Computers Work/IO Operations.md",
-    "Phase 0/How Computers Work/Virtual Memory & Paging.md",
-    "Phase 0/How Computers Work/Process & Thread - OS Level.md",
-    "Phase 0/How Computers Work/How Programs Are Loaded Into Memory.md",
-    "Phase 0/How Computers Work/Stack & Heap Memory - Hardware Level.md",
-    "Phase 0/How Computers Work/RAM, ROM & Storage.md",
-    "Phase 0/How Computers Work/Instruction Cycle.md",
+    "Levels/PHASE 00/Understanding the Software Industry.md",
+    "Structures/PHASE 00 - Environment Setup.md",
+    "Tools Setup.md",
     "README.md",
-    "Structures/Phase 16 - Advanced Topics.md",
-    "Phase 16/System Design/01-System-Design.md",
-    "Phase 16/System Design",
-    "Phase 16/Cloud AWS/01-Cloud-and-AWS.md",
-    "Phase 16/Cloud AWS",
-    "Phase 16/Advanced Database/01-Advanced-Database.md",
-    "Phase 16/Advanced Database",
-    "Phase 16/GraalVM Native Image/01-GraalVM-Native-Image.md",
-    "Phase 16/GraalVM Native Image",
-    "Phase 16/Elasticsearch/01-Elasticsearch.md",
-    "Phase 16/Elasticsearch",
-    "Phase 16/WebSocket/01-WebSocket.md",
-    "Phase 16/WebSocket",
-    "Phase 16/Reactive Programming/01-Reactive-Programming.md",
-    "Phase 16/Reactive Programming",
-    "Phase 16/GraphQL/01-GraphQL.md",
-    "Phase 16/GraphQL",
-    "Structures/Phase 15 - Security.md",
-    "ReadME.md",
-    "Phase 16/16.8-System-Design/01-System-Design.md",
-    "Phase 16/16.7-Cloud-AWS/01-Cloud-and-AWS.md",
-    "Phase 16/16.6-Advanced-Database/01-Advanced-Database.md",
-    "Phase 16/16.5-GraalVM-Native-Image/01-GraalVM-Native-Image.md",
-    "Phase 16/16.8-System-Design",
-    "Phase 16/16.7-Cloud-AWS",
+    "Understanding the Software Industry.md",
+    "Levels/PHASE 00",
+    "Levels/untitled folder",
+    "Levels/Understanding the Software Industry.md",
+    "Levels",
+    "untitled folder",
+    "Career/Job Applications.md",
+    "Career",
+    "Structures/Phase 01 - Java.md",
+    "Phases/Phase 16/WebSocket/01-WebSocket.md",
+    "Phases/Phase 16/System Design/01-System-Design.md",
+    "Phases/Phase 16/Reactive Programming/01-Reactive-Programming.md",
+    "Phases/Phase 16/GraphQL/01-GraphQL.md",
+    "Phases/Phase 16/GraalVM Native Image/01-GraalVM-Native-Image.md",
+    "Phases/Phase 16/Elasticsearch/01-Elasticsearch.md",
+    "Phases/Phase 16/Cloud AWS/01-Cloud-and-AWS.md",
+    "Phases/Phase 16/Advanced Database/01-Advanced-Database.md",
+    "Phases/Phase 16/WebSocket",
+    "Phases/Phase 16/System Design",
+    "Phases/Phase 16/Reactive Programming",
+    "Phases/Phase 16/GraphQL",
+    "Phases/Phase 16/GraalVM Native Image",
+    "Phases/Phase 11/RabbitMQ/01-RabbitMQ.md",
+    "Phases/Phase 11/Messaging Fundamentals/01-Messaging-Fundamentals.md",
+    "Phases/Phase 11/Async Patterns/01-Async-Patterns.md",
+    "Phases/Phase 11/Apache Kafka/01-Apache-Kafka.md",
+    "Phases/Phase 10/Kubernetes/01-Kubernetes.md",
+    "Phases/Phase 10/Docker/01-Docker.md",
+    "Phases/Phase 10/CI-CD/01-CI-CD.md",
+    "Phases/Phase 9/Monitoring & Observability/01-Monitoring-and-Observability.md",
+    "Phases/Phase 9/Logging/01-Logging.md",
+    "Phases/Phase 9/APM/01-APM.md",
     "Assets/Memory_Hierarchy.png",
     "Assets/new_keyword_memory_pic.png",
     "Assets/ds.jpg",
