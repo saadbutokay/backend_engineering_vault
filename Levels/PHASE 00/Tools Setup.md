@@ -1,5 +1,5 @@
 **Phase:** Level 0 - Environment & Mindset Setup  
-**Date Studied:** 27 July, 2026
+**Date Studied:** 27th July, 2026
 
 ---
 ## What Problem Does This Solve?
@@ -1152,7 +1152,7 @@ Accounts:
 ```
 
 ---
-## Your First Real Task - Hello World the RIGHT Way
+## Hello World the RIGHT Way
 _Not just running Hello World — doing it like a professional._
 ```
 STEP 1: Create a folder for ALL your projects

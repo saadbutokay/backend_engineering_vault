@@ -500,15 +500,6 @@ What Bangladesh companies want:
     × Years of experience
     × Formal certifications (but they help)
 
-  Your 2.83 CGPA situation:
-    Honest assessment:
-    • Most BD product companies (bKash, Pathao etc.)
-      will overlook CGPA if your projects are strong
-    • Software houses (Brain Station 23 etc.) care less about CGPA
-    • Pushing to 3.15 is still smart — important for MSc abroad
-    • Your projects and GitHub will matter MORE than CGPA
-      for getting your first job in Bangladesh
-
 Tech Stack Most Common in BD Companies (2024):
   Backend:  Java (Spring Boot), Python (Django/FastAPI), PHP (legacy)
   Database: MySQL, PostgreSQL, Oracle
@@ -543,7 +534,7 @@ Then you:
 
 Other things engineers do regularly:
   • Investigate production bugs ("the payment is failing
-    for some users — why?")
+    for some users - why?")
   • Join technical discussions ("how should we design this new feature?")
   • Write documentation
   • Review other engineers' code
@@ -603,7 +594,7 @@ COMMUNICATION (at companies):
 ## Interview Questions
 
 > These will not appear in a first-round interview but knowing them  
-> shows you have perspective — interviewers love that.
+> shows you have perspective - interviewers love that.
 
 ```
 Q: Why did you choose Java as your primary language?

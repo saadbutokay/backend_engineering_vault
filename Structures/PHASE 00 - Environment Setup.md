@@ -7,5 +7,6 @@ Follow the structure down.
 
 1. [[Understanding the Software Industry]]
 2. [[Tools Setup]]
+3. [[Git & GitHub Basics]]
 
 *(No more content will be added as the roadmap is complete)*
