@@ -914,51 +914,6 @@ README FOR EVERY PROJECT:
   This is what people read first.
 ```
 
-Structure:
-````markdown
-# Project Name
-
-Short description of what this project does.
-
-## Tech Stack
-- Java 21
-- Spring Boot 3.2
-- PostgreSQL
-- Redis
-- Docker
-
-## Features
-- User registration and JWT authentication
-- Product catalog with search and filtering
-- Order management
-- ...
-
-## Architecture
-[diagram or description]
-
-## Getting Started
-### Prerequisites
-- Java 21
-- Docker Desktop
-
-### Running Locally
-
-```bash
-git clone git@github.com:username/project.git
-cd project
-docker compose up -d
-mvn spring-boot:run
-```
-
-## API Documentation
-
-Swagger UI available at: **http://localhost:8080/swagger-ui.html**
-
-## Screenshots
-
-[add screenshots of Swagger UI, Postman tests]
-````
-
 ---
 ## Complete Practice Exercise
 *Do this right now. Step by step.*

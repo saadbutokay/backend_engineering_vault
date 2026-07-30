@@ -177,7 +177,6 @@ Fix:
 ```
 
 ---
-
 ## The Feynman Technique - Primary Learning Method
 ```
 Richard Feynman was a Nobel Prize-winning physicist.
@@ -242,8 +241,8 @@ PRACTICAL USAGE:
 ```
 
 ---
-## The Study System - Hour by Hour
-
+## The Study System
+Hour by Hour.
 ### The Pomodoro Technique (Modified for Engineering)
 ```
 Francesco Cirillo's technique, adapted for coding.
