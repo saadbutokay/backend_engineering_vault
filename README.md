@@ -8,13 +8,13 @@ Welcome to the Backend Engineering with Java Roadmap! This repository contains n
 ## What to do?
 1. Download Obsidian for better studying. Link for Obsidian: https://obsidian.md
 2. For Obsidian plugins, go to settings, community plugins and download `code styler`. This is a must.
-3. Go to Structure folder to find [[PHASE 00 - Environment Setup]] etc. to understand the layout and to find what is where.
-4. Extra Notes are provided for concept clearing. Read them.
+3. Go to Structure folder to find [[PHASE 00 - Environment Setup]], [[PHASE 01 - Java Fundamentals]] etc. to understand the layout and to find what is where.
 
 Have fun.
 
 ## Contents from Structures
 1. [[PHASE 00 - Environment Setup]]
+2. [[PHASE 01 - Java Fundamentals]]
 
 
  ###### Studied & Authored by Abdullah Al Sayb Saad.
