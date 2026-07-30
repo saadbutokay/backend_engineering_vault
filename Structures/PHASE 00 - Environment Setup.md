@@ -8,5 +8,6 @@ Follow the structure down.
 1. [[Understanding the Software Industry]]
 2. [[Tools Setup]]
 3. [[Git & GitHub Basics]]
+4. [[Mindset & Study Framework]]
 
 *(No more content will be added as the roadmap is complete)*

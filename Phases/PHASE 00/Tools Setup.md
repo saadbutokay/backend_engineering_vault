@@ -106,6 +106,11 @@ JVM = Java Virtual Machine
 ```
 
 ### JDK vs JRE vs JVM
+JDK - Java Development Kit
+JRE - Java Runtime Environment
+JVM - Java Virtual Machine
+
+learn more [[JDK, JRE & JVM|here]].
 ```
 JDK (Java Development Kit)
   → For DEVELOPERS
@@ -190,18 +195,23 @@ Learn SDKMAN later when you need multiple Java versions.
 ```
 
 ### Verify Installation
-```
 Open Command Prompt (Windows) or Terminal:
+```bash
+java -version
+```
 
-  java -version
-
+```
 Expected output:
   openjdk version "21.0.x" 2024-xx-xx
   OpenJDK Runtime Environment Temurin-21...
   OpenJDK 64-Bit Server VM Temurin-21...
+```
 
+```bash
   javac -version
+```
 
+```
 Expected output:
   javac 21.0.x
 
@@ -227,11 +237,15 @@ JAVA_HOME:
   Many tools (Maven, Gradle, IntelliJ) look for JAVA_HOME
   to know where Java is installed.
   Without this, build tools may not work correctly.
+```
 
+```bash
 How to verify JAVA_HOME on Windows:
   In Command Prompt:
   echo %JAVA_HOME%
-  
+```
+
+```
   Expected:
   C:\Program Files\Eclipse Adoptium\jdk-21.0.x.x-hotspot
 
@@ -346,7 +360,7 @@ STEP 2: Essential Plugins to Install
   ✅ Rainbow Brackets
      Colors matching brackets — makes code readable
   
-  ✅ SonarLint
+  ✅ SonarQube
      Real-time code quality checks — catches bugs as you type
   
   ✅ Lombok (important for Spring Boot later)
@@ -1153,13 +1167,15 @@ Accounts:
 
 ---
 ## Hello World the RIGHT Way
-_Not just running Hello World — doing it like a professional._
+_Not just running Hello World - doing it like a professional._
 ```
 STEP 1: Create a folder for ALL your projects
   In terminal (WSL or Git Bash):
   mkdir ~/projects
   cd ~/projects
+```
 
+```
 STEP 2: Create your first project in IntelliJ
   File → New → Project
   Select: Java
@@ -1168,7 +1184,9 @@ STEP 2: Create your first project in IntelliJ
   Build system: Maven (important!)
   JDK: 21
   Create
+```
 
+```
 STEP 3: Write Hello World
   src/main/java → right-click → New → Java Class
   Name: Main
@@ -1180,20 +1198,26 @@ STEP 3: Write Hello World
           System.out.println("I am becoming a backend engineer.");
       }
   }
+```
 
+```
 STEP 4: Run it
   Click green play button next to main method
   OR: Shift + F10
   See output in Run panel at bottom
+```
 
+```
 STEP 5: Initialize Git (THE PROFESSIONAL PART)
   Open terminal in IntelliJ (Alt + F12)
   OR use WSL terminal:
   
   cd ~/projects/hello-world
   git init
-  
-STEP 6: Create .gitignore
+```
+
+```
+  STEP 6: Create .gitignore
   In IntelliJ: right-click project root → New → File
   Name: .gitignore
   
@@ -1214,14 +1238,18 @@ STEP 6: Create .gitignore
   # OS
   .DS_Store
   Thumbs.db
+```
 
+```
 STEP 7: First Commit
   git add .
   git status
   (see all files staged — should NOT include .idea or target)
   
   git commit -m "feat: initial hello world project"
+```
 
+```
 STEP 8: Push to GitHub
   1. Go to GitHub.com
   2. Click "+" → New repository
@@ -1235,7 +1263,9 @@ STEP 8: Push to GitHub
   git remote add origin git@github.com:yourusername/hello-world.git
   git branch -M main
   git push -u origin main
+```
 
+```
 STEP 9: Verify
   Refresh GitHub page
   You should see your code online
