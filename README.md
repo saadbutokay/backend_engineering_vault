@@ -15,6 +15,8 @@ Have fun.
 ## Contents from Structures
 1. [[PHASE 00 - Environment Setup]]
 2. [[PHASE 01 - Java Fundamentals]]
+3. [[PHASE 02 - OOP]]
+4. 
 
 
  ###### Studied & Authored by Abdullah Al Sayb Saad.

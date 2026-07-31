@@ -1,5 +1,5 @@
 **Phase:** Level 1 - Java Fundamentals  
-**Date Studied:**
+**Date Studied:** 31st July, 2026
 
 ---
 ## What Problem Does This Solve?
@@ -17,15 +17,12 @@ public class Main {
 They just copy it. It works. They move on.
 
 Six months later in an interview:  
-"What does `static` mean in the main method?"  
-"Why is main `void`?"  
-"What is `String[] args`?"
+- "What does `static` mean in the main method?"  
+- "Why is main `void`?"  
+- "What is `String[] args`?"
 
 Silence.
-This note explains EVERY word in your first program.  
-Not just what to type - but WHY every single piece exists.  
-When you finish this note, you will understand every  
-character in that program completely.
+This note explains EVERY word in your first program. Not just what to type - but WHY every single piece exists. When you finish this note, you will understand every character in that program completely.
 
 ---
 ## The Full First Program
@@ -48,30 +45,22 @@ public class Main {
 }
 ```
 
-### `class`
+**WHAT IT IS:**
+- The fundamental building block of Java.
+- Everything in Java lives inside a class.
+- Unlike Python or JavaScript where you can write
+- code outside of any class - in Java you CANNOT.
+- There is no such thing as "code outside a class" in Java.
+- Every line of executable code must be inside a class.
 
-```
-WHAT IT IS:
-  The fundamental building block of Java.
-  Everything in Java lives inside a class.
-  
-  Unlike Python or JavaScript where you can write
-  code outside of any class — in Java you CANNOT.
-  There is no such thing as "code outside a class" in Java.
-  Every line of executable code must be inside a class.
-```
-
-```
-WHAT IT DOES:
-  A class is a blueprint.
-  It defines what something IS and what it CAN DO.
-  
-  Right now, Main is just a container for our program.
-  Later, classes will represent real things:
-    class User { ... }        → blueprint for a user
-    class BankAccount { ... } → blueprint for an account
-    class Order { ... }       → blueprint for an order
-```
+**WHAT IT DOES:**
+- A class is a blueprint.
+- It defines what something IS and what it CAN DO.
+- Right now, Main is just a container for our program.
+- Later, classes will represent real things:
+    - class User { ... }        → blueprint for a user
+    - class BankAccount { ... } → blueprint for an account
+    - class Order { ... }       → blueprint for an order
 
 ```
 SYNTAX RULE:
@@ -152,37 +141,38 @@ FILE NAME RULE:
 
 ---
 ### The Braces `{ }`
-
-```
 WHAT THEY ARE:
-  Block delimiters. They define a "scope" or "block."
-  Everything between { and } belongs to that block.
+- Block delimiters. They define a "scope" or "block."
+- Everything between { and } belongs to that block.
 
 IN JAVA:
+```java
   class body → { }
   method body → { }
   if block → { }
   for loop → { }
   try block → { }
+```
 
+```
 EVERY { MUST HAVE A MATCHING }
   This is the most common beginner syntax error.
   
   IntelliJ helps: when you type {, it auto-types }
   Also shows matching braces when you click on one.
-  
-  INDENTATION is your visual guide:
-  public class Main {           ← opens class block
-      public static void main   ← inside class
-          (String[] args) {     ← opens method block
-          System.out.println(); ← inside method
-      }                         ← closes method block
-  }                             ← closes class block
-  
-  4 spaces per indent level (Java standard).
-  IntelliJ does this automatically.
-  Ctrl+Alt+L reformats code to correct indentation.
 ```
+
+INDENTATION is your visual guide:
+```java
+  public class Main {           // opens class block
+      public static void main   // inside class
+          (String[] args) {     // opens method block
+          System.out.println(); // inside method
+      }                         // closes method block
+  }                             // closes class block
+```
+4 spaces per indent level (Java standard). IntelliJ does this automatically. Ctrl+Alt+L reformats code to correct indentation.
+
 
 ---
 ## Layer 2 - The main Method
@@ -191,7 +181,6 @@ public static void main(String[] args) {
     // your code goes here
 }
 ```
-
 This is the **entry point** of every Java application. When you run `java Main`, the JVM looks for EXACTLY this method. Not just any method called "main" - THIS specific signature.
 
 Let's understand every word:
@@ -217,29 +206,27 @@ WHY main MUST BE public:
 
 ---
 ### `static`
-
-```
 WHAT IT MEANS:
-  This method belongs to the CLASS itself.
-  Not to any specific OBJECT (instance) of the class.
+- This method belongs to the CLASS itself.
+- Not to any specific OBJECT (instance) of the class.
 
 WITHOUT static:
-  To call a regular method, you need an object:
+```java
+  // To call a regular method, you need an object:
   Main obj = new Main();  // create object first
   obj.someMethod();       // then call method on it
-  
+```
+
 WITH static:
-  You call it on the class itself, no object needed:
+```java
+  // You call it on the class itself, no object needed:
   Main.main(args);        // directly on the class
-  
+```
+
 WHY main MUST BE static:
-  Think about it:
-  When the JVM starts running your program,
-  NO objects exist yet.
-  Nothing has been created.
-  The JVM can't create a Main object to call main on it
-  because it doesn't even know how to do that yet.
-  
+- Think about it: When the JVM starts running your program, NO objects exist yet. Nothing has been created. The JVM can't create a Main object to call main on it because it doesn't even know how to do that yet.
+
+```  
   The JVM needs a starting point BEFORE any objects exist.
   
   Solution: make main static.
@@ -252,28 +239,30 @@ WHY main MUST BE static:
   This is why:
   static → class level (exists without any object)
   non-static → instance level (needs an object)
-  
-  We'll explore this much more in Level 1.10 (OOP).
 ```
+We'll explore this much more in [[Classes & Objects]].
 
 ---
 ### `void`
-
-```
 WHAT IT MEANS:
-  The return type of this method.
-  void means: "this method returns NOTHING."
+- The return type of this method.
+- void means: "this method returns NOTHING."
 
 METHODS CAN RETURN VALUES:
+```java
   int add(int a, int b) { return a + b; } // returns int
   String getName() { return "Rahim"; }     // returns String
   boolean isAdult(int age) { return age >= 18; } // returns boolean
+```
 
 void MEANS NO RETURN:
+```java
   void printHello() { System.out.println("Hello"); }
   // prints something but returns nothing
-  
-  void methods:
+```
+
+```
+void methods:
   → Cannot have a return statement with a value
   → Can have bare return; (just exits the method early)
   → Caller cannot use the result (there is none)
@@ -297,30 +286,27 @@ WHY main IS void:
 
 ---
 ### `main`
-
-```
 WHAT IT IS:
-  The method name.
-  
-WHY "main"?
-  Convention that Java requires.
-  The JVM specifically looks for a method called "main".
-  It's not a keyword — it's just the name the JVM searches for.
-  
-  You can have other methods called main in other classes —
-  but only ONE class is the "entry point" class.
-  You specify which class when running:
-  java Main  ← this tells JVM: find main() in Main class
-  
-  In Spring Boot, you'll see:
+- The method name.
+
+**WHY "main"?**
+Convention that Java requires. The JVM specifically looks for a method called "main". It's not a keyword - it's just the name the JVM searches for.
+
+You can have other methods called main in other classes - but only ONE class is the "entry point" class. You specify which class when running:
+  `java Main`  ← this tells JVM: find `main()` in Main class
+
+In Spring Boot, you'll see:
+```java
   @SpringBootApplication
   public class MyApp {
       public static void main(String[] args) {
           SpringApplication.run(MyApp.class, args);
       }
   }
-  Same pattern. Same main method. Spring Boot takes over from here.
+  // Same pattern. Same main method. Spring Boot takes over from here.
+```
 
+```
 NAMING RULES FOR METHODS:
   → camelCase: first word lowercase, subsequent words capitalized
     ✅ main, getUserById, calculateTotalPrice, sendEmail
@@ -337,42 +323,44 @@ NAMING RULES FOR METHODS:
 
 ---
 ### `(String[] args)`
+WHAT IT IS:
+- The parameter list of the main method.
+- Parameters = input values that a method receives.
 
 ```
-WHAT IT IS:
-  The parameter list of the main method.
-  Parameters = input values that a method receives.
-
 BREAKING IT DOWN:
-  String[]  → the TYPE: an array of Strings
-  args      → the NAME: the variable name for this array
+ String[]  → the TYPE: an array of Strings
+ args      → the NAME: the variable name for this array
               (short for "arguments" — could be named anything)
               convention is args
+```
 
-WHAT IS String[]?
-  String  = text data type (we'll cover fully in Level 1.9)
-  []      = array (a collection of items of same type)
-  String[] = an array (list) of String items
-  
-  Example String array:
+WHAT IS `String[]`?
+- String = text data type (we'll cover fully in [[Strings Deep Dive]])
+- `[]` = array (a collection of items of same type)
+- `String[]` = an array (list) of String items
+
+```java
+// Example String array:
   String[] fruits = {"apple", "banana", "mango"};
-  fruits[0] = "apple"   ← access by index (starts at 0!)
+  fruits[0] = "apple"   // access by index (starts at 0!)
   fruits[1] = "banana"
   fruits[2] = "mango"
+```
 
-WHAT IS args?
-  When you run a Java program from the command line,
-  you can pass arguments (extra information) to it:
+WHAT IS `args`?
+- When you run a Java program from the command line, you can pass arguments (extra information) to it:
+```java
+// java Main hello world 123
   
-  java Main hello world 123
-  
-  Inside your program:
+// Inside your program:
   args[0] = "hello"
   args[1] = "world"
   args[2] = "123"
-  
-  This is how you pass configuration to a program
-  from the command line.
+```
+
+```
+This is how you pass configuration to a program from the command line.
 
 WHY main NEEDS String[] args:
   The JVM specification says main MUST have this parameter.
@@ -384,8 +372,10 @@ WHY main NEEDS String[] args:
   However in Java 21, there's a new feature (preview):
   Unnamed main methods (JEP 445) — for very simple programs.
   But for now, always write the full signature.
+```
 
-USING args IN PRACTICE:
+```java
+// USING args IN PRACTICE:
   public static void main(String[] args) {
       if (args.length > 0) {
           System.out.println("First argument: " + args[0]);
@@ -393,7 +383,9 @@ USING args IN PRACTICE:
           System.out.println("No arguments provided");
       }
   }
-  
+```
+
+```
   Run: java Main Dhaka
   Output: First argument: Dhaka
   
@@ -604,37 +596,39 @@ GOLDEN RULE:
 
 ---
 ## Understanding the Semicolon `;`
-
-```
-In Java, every STATEMENT ends with a semicolon ;
-
-A statement is a complete instruction.
-
-Examples of statements (need semicolons):
+In Java, every STATEMENT ends with a semicolon `;`. A statement is a complete instruction.
+```java
+// Examples of statements (need semicolons):
   int x = 5;
   System.out.println("hello");
   String name = "Rahim";
   x = x + 1;
   return value;
+```
 
-Examples of NOT statements (no semicolons):
-  public class Main { ... }     ← class declaration
-  public static void main() {  ← method declaration
-  if (condition) {             ← if statement header
-  for (int i = 0; i < 10; i++) { ← for loop header
-  }                             ← closing brace
+```java
+// Examples of NOT statements (no semicolons):
+  public class Main { ... }       // class declaration
+  public static void main() {     // method declaration
+  if (condition) {                // if statement header
+  for (int i = 0; i < 10; i++) {  // for loop header
+  }                               // closing brace
+```
 
-COMMON SEMICOLON ERRORS:
-  Missing semicolon:
-    int x = 5        ← error: ';' expected
-    int x = 5        ← error on NEXT line (confusing!)
+```java
+// COMMON SEMICOLON ERRORS:
+  // Missing semicolon:
+    int x = 5        // error: ';' expected
+    int x = 5        // error on NEXT line (confusing!)
     System.out.println("hi")
     // Java reads until end → reports error on next line
     // Always look at the line BEFORE the reported error
-  
-  Semicolon after if/for/while (logic bug, not syntax error!):
-    if (x > 0);       ← VALID SYNTAX but almost always a bug!
-    {                  ← this block runs regardless of condition
+```
+
+```java
+  // Semicolon after if/for/while (logic bug, not syntax error!):
+    if (x > 0);       // VALID SYNTAX but almost always a bug!
+    {                  // this block runs regardless of condition
         System.out.println("this always prints");
     }
     // The ; after if creates an empty if body
@@ -732,9 +726,8 @@ REFORMAT CODE:
 
 ---
 ## Program Structure - Bigger Picture
-```
 As your programs grow, here's the full structure:
-
+```java
 // 1. Package declaration (first line, if any)
 package com.yourname.myapp;
 
@@ -745,17 +738,17 @@ import java.util.ArrayList;
 // 3. Class declaration
 public class UserManager {
     
-    // 4. Fields (class-level variables)
+// 4. Fields (class-level variables)
     private static int totalUsers = 0;  // static field
     private String name;                 // instance field
     
-    // 5. Constructors (how to create objects of this class)
+// 5. Constructors (how to create objects of this class)
     public UserManager(String name) {
         this.name = name;
         totalUsers++;
     }
     
-    // 6. Methods (behaviors)
+// 6. Methods (behaviors)
     public void displayInfo() {
         System.out.println("Manager: " + name);
     }
@@ -764,14 +757,16 @@ public class UserManager {
         return totalUsers;
     }
     
-    // 7. main method (only in one class — the entry point)
+// 7. main method (only in one class — the entry point)
     public static void main(String[] args) {
         UserManager manager = new UserManager("Rahim");
         manager.displayInfo();
         System.out.println("Total: " + getTotalUsers());
     }
 }
+```
 
+```
 RIGHT NOW you only need:
   → Package (skip for now)
   → Import (we'll add when needed)

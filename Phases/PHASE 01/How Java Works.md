@@ -119,7 +119,6 @@ Example file structure:
 - (com.google.User vs com.yourname.User)
 
 ---
-
 ## Step 2 - The Java Compiler (`javac`)
 
 ### What Does the Compiler Do?
@@ -479,7 +478,9 @@ SIMPLE RULE:
   You develop → install JDK (contains everything)
   User runs your app → only needs JRE (or JDK also works)
   Java runs → always using JVM (inside JDK/JRE)
+```
 
+```
 ┌─────────────────────────────────┐
 │              JDK                │
 │  ┌───────────────────────────┐  │
@@ -606,17 +607,17 @@ For you: Temurin 21 is perfect.
 
 ---
 ## The Complete Journey - Source to Running Program
-```
-Let's trace your Hello World completely:
-
+Let's trace your Hello World completely.
 YOU WRITE (Main.java):
-━━━━━━━━━━━━━━━━━━━━━━
+```java
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello, World!");
     }
 }
+```
 
+```
 STEP 1: IntelliJ (or you) runs:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 javac Main.java

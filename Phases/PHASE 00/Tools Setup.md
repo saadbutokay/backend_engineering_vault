@@ -110,7 +110,6 @@ JDK - Java Development Kit
 JRE - Java Runtime Environment
 JVM - Java Virtual Machine
 
-learn more [[JDK, JRE & JVM|here]].
 ```
 JDK (Java Development Kit)
   → For DEVELOPERS
