@@ -629,6 +629,7 @@ Poetry advantages:
   ✅ One tool to rule them all
 ```
 
+**Note:** Poetry must be installed globally.
 ### 6.2 Installing Poetry
 ```bash
 # Mac/Linux:
@@ -812,7 +813,6 @@ Use Poetry when:
 ---
 ## 7. How to Read Official Documentation?
 This Skill is More Valuable Than Any Tutorial.
-
 Tutorials get outdated. Documentation is always current.
 Senior engineers read docs constantly. Junior engineers avoid docs and get stuck.
 The difference in your growth speed is massive.
@@ -831,6 +831,7 @@ The difference in your growth speed is massive.
 | PostgreSQL | [postgresql.org/docs/](https://postgresql.org/docs/) |
 | Redis | [redis.io/docs/](https://redis.io/docs/) |
 
+---
 ### 7.2 How to Read Documentation Effectively
 ```
 Step 1: Start with "Getting Started" or "Quickstart"
@@ -892,6 +893,7 @@ my_project/
     ├── __init__.py
     └── test_main.py
 ```
+More Detailed Version [[Python Project Structure with Poetry|here]].
 
 ---
 ## Hands-On Practice

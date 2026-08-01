@@ -1211,6 +1211,8 @@ print(city)  # New York
 ---
 ## 10. Comprehensions - Python's Superpower
 **Comprehensions** in Python are concise, single-line syntactic patterns used to create new collections from existing iterables. They replace verbose `for` loops, making your code cleaner, more readable, and often faster.
+
+For better understanding, watch [this](https://youtu.be/YlY2g2xrl6Q).
 ```python
 # LIST COMPREHENSION
 # Short, readable way to create lists
@@ -1270,7 +1272,7 @@ print(unique_emails)  # {'alice@test.com', 'bob@test.com'}
 
 ---
 ## 11. Unpacking & Packing
-
+**Packing and unpacking** in Python refer to grouping multiple individual values into a single collection (packing) and extracting values from a collection back into separate variables (unpacking). These operations make code highly readable, concise, and dynamic.
 ```python
 # ─────────────────────────────────────────
 # UNPACKING
@@ -1375,7 +1377,6 @@ create_db_record("users", name="Alice", email="alice@test.com", age=25)
 
 ---
 ## Practice Exercises - Do These Now
-
 ```python
 # Exercise 1:
 # Given this list of users, write code to:
