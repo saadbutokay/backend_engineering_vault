@@ -233,7 +233,7 @@ Click folder → click file  →   cd documents/myproject
 Double click program       →   python3 main.py
 Create new folder          →   mkdir new_folder
 ```
-As a backend engineer, you'll live in the terminal. Servers don't have graphical interfaces. Just terminal.
+As a backend engineer, you'll live in the terminal. Servers don't have graphical interfaces. Just terminal. use [[Terminal Cheatsheet]] for quick access.
 
 ### 1.1 Opening the Terminal
 ```
@@ -617,7 +617,7 @@ pip + `requirements.txt` problems:
   ❌ No built-in virtual env management
   ❌ Versions can be loose/unpredictable
 ```
-Poetry solves ALL of this. Industry is moving toward Poetry. Many companies use it.
+Poetry solves ALL of this. Industry is moving toward Poetry. Many companies use it. use [[Poetry Cheatsheet]] for quick access.
 
 Poetry advantages:
 ```
@@ -893,7 +893,7 @@ my_project/
     ├── __init__.py
     └── test_main.py
 ```
-More Detailed Version [[Python Project Structure with Poetry|here]].
+More Detailed Version [[Python Project Structure|here]].
 
 ---
 ## Hands-On Practice

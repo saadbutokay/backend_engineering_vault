@@ -1,5 +1,5 @@
-## Setup & Config
 ```bash
+# Setup & Config
 # Identity (required before first commit)
 git config --global user.name  "Your Name"
 git config --global user.email "you@email.com"
@@ -24,9 +24,8 @@ git config --global --list
 # --system  →  /etc/gitconfig
 ```
 
----
-## Starting a Repo
 ```bash
+# Starting a Repo
 git init                         # Initialize new repo in current folder
 git init my_project              # Create new folder + initialize
 git clone <url>                  # Clone remote repo
@@ -35,9 +34,8 @@ git clone --depth 1 <url>        # Shallow clone (latest snapshot only, faster)
 git clone -b develop <url>       # Clone specific branch
 ```
 
----
-## Snapshotting (The Core Loop)
 ```bash
+# Snapshotting (The Core Loop)
 # ─── CHECK STATUS ─────────────────────────────────────
 git status                       # Full status
 git status -s                    # Short/compact status
@@ -341,7 +339,7 @@ git rm --cached file.py          # Stop tracking (keep on disk)
 git rm --cached -r folder/       # Stop tracking folder
 ```
 
-### Common `.gitignore` for Python:
+### Common `.gitignore` for Python
 
 ```bash
 # Python
@@ -377,6 +375,52 @@ htmlcov/
 # OS
 .DS_Store
 Thumbs.db
+```
+
+### Global `.gitignore`
+
+```
+# System Files (OS specific)
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Common IDEs and Editors
+# Visual Studio Code
+.vscode/
+!.vscode/extensions.json
+*.code-workspace
+
+# IntelliJ / JetBrains
+.idea/
+*.iml
+*.iws
+
+# Eclipse
+.metadata/
+.classpath
+.project
+.settings/
+
+# Sublime Text / Vim
+*.sublime-project
+*.sublime-workspace
+.*.swp
+*~
+
+# Logs and Databases
+*.log
+logs/
+*.sqlite
+
+# Local Environment / Secrets (Safety net)
+.env
+.env.local
+.env.*.local
 ```
 
 ---

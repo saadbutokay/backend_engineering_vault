@@ -1,4 +1,6 @@
-Without functions:
+In Python, **functions** are reusable blocks of code designed to perform a specific task, while **scope** refers to the textual region of a program where a specific variable is accessible. Understanding how variables interact within and outside of functions prevents unexpected bugs like data leaking or naming collisions.
+
+**Without functions:**
 ```python
 # Imagine an API with 50 endpoints
 # Each endpoint needs to validate a user token
@@ -19,7 +21,7 @@ jwt_token = token[7:]
 # Security vulnerability. You're fired.
 ```
 
-With functions:
+**With functions:**
 ```python
 # Write ONCE
 def validate_token(token):
@@ -49,7 +51,6 @@ code .
 ```
 
 ---
-
 ## 1. Defining Functions
 In Python, you define a function using the **`def` keyword**, followed by the **function name**, **parentheses `()`**, and a **colon `:`**. The code block inside the function must be indented.
 ```python
@@ -73,7 +74,6 @@ print(greet("Bob", "Hi"))   # Hi, Bob!
 ```
 
 ### Functions Without Return
-
 ```python
 # If no return statement → returns None
 def log_request(method, path, status):
@@ -90,7 +90,6 @@ print(result)   # None
 ```
 
 ### Return Multiple Values
-
 ```python
 # Python functions can return multiple values
 # They're packed as a TUPLE
@@ -133,11 +132,9 @@ else:
 ```
 
 ---
-
 ## 2. Parameters & Arguments
 
 ### The Difference
-
 ```
 Parameter = variable in the function DEFINITION
 Argument  = actual value you PASS when calling
@@ -149,7 +146,6 @@ greet("Alice")      ← "Alice" is an ARGUMENT
 ```
 
 ### Default Arguments
-
 ```python
 # Parameters with default values
 # Defaults must come AFTER non-default parameters
@@ -181,8 +177,7 @@ print(user3)
 # {'name': 'Charlie', 'email': 'charlie@test.com', 'role': 'moderator', 'is_active': True}
 ```
 
-### ⚠️ The Mutable Default Argument Trap
-
+### The Mutable Default Argument Trap
 ```python
 # ONE OF THE MOST COMMON PYTHON BUGS
 # NEVER use mutable objects as defaults
@@ -216,7 +211,6 @@ print(add_tag("redis"))     # ['redis']   ← correct!
 ```
 
 ### Keyword Arguments
-
 ```python
 def create_api_response(data, status_code, message, success):
     return {
@@ -251,7 +245,6 @@ response = create_api_response(
 ```
 
 ---
-
 ## 3. `*args` and `**kwargs`
 
 ### `*args` - Variable Positional Arguments
@@ -295,7 +288,7 @@ users = bulk_create_users(
 print(len(users))   # 3
 ```
 
-### `**kwargs` — Variable Keyword Arguments
+### `**kwargs` - Variable Keyword Arguments
 
 ```python
 # **kwargs collects keyword arguments into a DICT
@@ -331,7 +324,6 @@ print(query)
 ```
 
 ### Combining Everything
-
 ```python
 # Order MUST be:
 # regular → *args → keyword-with-defaults → **kwargs
@@ -447,7 +439,6 @@ print(count)    # 2
 ```
 
 ### Enclosing Scope (Closures Preview)
-
 ```python
 # When a function is defined INSIDE another function
 # the inner function can access the outer function's variables
@@ -470,7 +461,6 @@ outer_function("Hello from outer")
 ```
 
 ### Built-in Scope
-
 ```python
 # Python's built-in names are always available
 # len, print, range, type, int, str, list, dict...
@@ -493,7 +483,6 @@ numbers_list = [1, 2, 3]
 ```
 
 ### LEGB in Action
-
 ```python
 x = "global"        # Global scope
 
@@ -1062,7 +1051,7 @@ sys.setrecursionlimit(10000)
 
 ---
 
-## 9. Docstrings & Type Hints
+## 9. `Docstrings` & Type Hints
 
 ### Docstrings
 
