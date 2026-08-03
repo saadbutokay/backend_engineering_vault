@@ -127,6 +127,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Notes/Git Cheatsheet.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +137,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for Git Cheatsheet"
             }
           },
           {
@@ -145,11 +146,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Notes/Git Cheatsheet.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from Git Cheatsheet"
             }
           },
           {
@@ -213,10 +215,10 @@
       "bases:Create new base": false
     }
   },
-  "active": "10f94ae185d79f95",
+  "active": "7e7f6cf032e4ea42",
   "lastOpenFiles": [
-    "Notes/Git Cheatsheet.md",
     "Untitled.md",
+    "Notes/Git Cheatsheet.md",
     "Phases/PHASE 00/Git & Version Control.md",
     "Navigation/PHASE 00 - FOUNDATIONS.md",
     "README.md",
