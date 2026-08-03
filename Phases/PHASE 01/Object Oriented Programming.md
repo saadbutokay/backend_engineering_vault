@@ -46,13 +46,23 @@ print(alice.is_active)       # False
 
 ---
 ## Setup
-
 ```bash
 cd ~/projects
 mkdir oop_basics
 cd oop_basics
 python3 -m venv venv
 source venv/bin/activate
+touch oop.py
+code .
+```
+
+Or, with Poetry:
+```bash
+cd ~/projects
+poetry new project_name
+poetry config virtualenvs.in-project true
+poetry install
+source <(poetry env activate)
 touch oop.py
 code .
 ```

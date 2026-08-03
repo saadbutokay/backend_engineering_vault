@@ -50,6 +50,16 @@ touch functions.py
 code .
 ```
 
+Or, with Poetry:
+```bash
+cd ~/projects
+poetry new project_name
+poetry config virtualenvs.in-project true
+poetry install
+source <(poetry env activate)
+touch functions.py
+```
+
 ---
 ## 1. Defining Functions
 In Python, you define a function using the **`def` keyword**, followed by the **function name**, **parentheses `()`**, and a **colon `:`**. The code block inside the function must be indented.

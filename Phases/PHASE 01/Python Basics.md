@@ -9,6 +9,16 @@ source venv/bin/activate  # Mac/Linux
 touch basics.py
 code . # install it from your IDE first
 ```
+
+Or, with Poetry:
+```bash
+cd ~/projects
+poetry new project_file_name
+poetry config virtualenvs.in-project true
+poetry install
+source <(poetry env activate)
+touch basics.py
+```
 **Write every example yourself. Don't copy-paste. Type it.**
 
 ---
@@ -1062,7 +1072,7 @@ print(pending)  # {2, 4}
 ### 9.3 Tuples - Ordered, Unchangeable
 Tuples in Python are **ordered**, **immutable** collections of items. They allow duplicate values and can hold mixed data types (strings, numbers, etc.). Once created, you cannot change, add, or remove their elements.
 
-Examples of tuples are mixed with [[#11. Unpacking & Packing|packing & unpacking]]. Try to understand both at the same time.
+Examples of tuples are mixed with [[#11. Unpacking & Packing|packing & unpacking]]. Try to understand both at the same time. and learn Tuples [here](https://youtu.be/w6hL_dszMxk).
 ```python
 # TUPLES
 # Like lists BUT cannot be changed after creation
@@ -1115,7 +1125,7 @@ print(f"User {user_id}: {name}")
 ```
 
 ### 9.4 Dictionaries - Key-Value Pairs
-A **Python dictionary stores data in key-value pairs** where each unique key maps directly to a specific value. Dictionaries are written using curly braces `{}` with colons `:` separating the keys and values.
+A **Python dictionary stores data in key-value pairs** where each unique key maps directly to a specific value. Dictionaries are written using curly braces `{}` with colons `:` separating the keys and values. Dicts are ordered & changeable, No Duplicates.
 
 Watch [this](https://youtu.be/MZZSMaEAC2g) for better understanding.
 ```python
@@ -1274,6 +1284,7 @@ print(unique_emails)  # {'alice@test.com', 'bob@test.com'}
 ---
 ## 11. Unpacking & Packing
 **Packing and unpacking** in Python refer to grouping multiple individual values into a single collection (packing) and extracting values from a collection back into separate variables (unpacking). These operations make code highly readable, concise, and dynamic.
+Watch [this](https://youtu.be/-mS7K2K1IWk) for better understanding.
 ```python
 # ─────────────────────────────────────────
 # UNPACKING

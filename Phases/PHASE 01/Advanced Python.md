@@ -27,6 +27,17 @@ touch advanced.py
 code .
 ```
 
+Or, with Poetry:
+```bash
+cd ~/projects
+poetry new project_name
+poetry config virtualenvs.in-project true
+poetry install
+source <(poetry env activate)
+touch advanced.py
+code .
+```
+
 ---
 
 ## 1. Iterators & Generators
