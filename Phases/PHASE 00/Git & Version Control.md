@@ -20,7 +20,7 @@ Git is a system that:
   - Stores your code safely on the internet (GitHub)
   - Tracks WHO changed WHAT and WHEN
 
-[Click this](https://youtu.be/HkdAHXoRtos) to watch it in YouTube. and use [[Git Cheatsheet]].
+[Click this](https://youtu.be/8JJ101D3knE) to watch it in YouTube. and use [[Git Cheatsheet]].
 
 ---
 ## 1. Core Concepts

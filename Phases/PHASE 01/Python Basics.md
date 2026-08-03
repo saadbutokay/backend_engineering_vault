@@ -525,8 +525,7 @@ In Python, you accept user input by using the built-in **`input()` function**. T
 ```python
 # INPUT (terminal input - for CLI apps)
 # Note: In web backends, input comes from HTTP requests
-# But input() is useful for CLI tools and learning
-
+# But input() is useful for CLI tools and learnit
 name = input("Enter your name: ")
 print(f"Hello, {name}!")
 
@@ -1062,6 +1061,8 @@ print(pending)  # {2, 4}
 
 ### 9.3 Tuples - Ordered, Unchangeable
 Tuples in Python are **ordered**, **immutable** collections of items. They allow duplicate values and can hold mixed data types (strings, numbers, etc.). Once created, you cannot change, add, or remove their elements.
+
+Examples of tuples are mixed with [[#11. Unpacking & Packing|packing & unpacking]]. Try to understand both at the same time.
 ```python
 # TUPLES
 # Like lists BUT cannot be changed after creation
@@ -1377,8 +1378,9 @@ create_db_record("users", name="Alice", email="alice@test.com", age=25)
 
 ---
 ## Practice Exercises - Do These Now
+
+### Exercise 1:
 ```python
-# Exercise 1:
 # Given this list of users, write code to:
 # a) Get only active users
 # b) Get list of just their emails (lowercase)
@@ -1389,19 +1391,24 @@ users = [
     {"id": 3, "name": "Charlie", "email": "Charlie@Test.com", "is_active": True},
     {"id": 4, "name": "Dave", "email": "Dave@Test.com", "is_active": True},
 ]
+```
 
-# Exercise 2:
+### Exercise 2:
+```python
 # Given a string of comma-separated tags:
 # "python,backend,fastapi,python,api,backend"
 # Get a sorted list of UNIQUE tags
 tags_string = "python,backend,fastapi,python,api,backend"
+```
 
-# Exercise 3:
+### Exercise 3:
+```python
 # Given a list of HTTP status codes,
 # print what each one means using if/elif/else
 status_codes = [200, 404, 500, 201, 403, 301]
-
-# Exercise 4:
+```
+### Exercise 4:
+```python
 # Build a simple grade calculator
 # scores = [85, 92, 78, 95, 88]
 # Calculate: average, highest, lowest, pass/fail

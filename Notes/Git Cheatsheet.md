@@ -379,7 +379,7 @@ Thumbs.db
 
 ### Global `.gitignore`
 
-```
+```bash
 # System Files (OS specific)
 .DS_Store
 .DS_Store?
