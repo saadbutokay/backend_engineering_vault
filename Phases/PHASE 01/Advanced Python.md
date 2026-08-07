@@ -30,7 +30,8 @@ code .
 Or, with Poetry:
 ```bash
 cd ~/projects
-poetry new project_name
+poetry new project_folder_name
+cd project_folder_name
 poetry config virtualenvs.in-project true
 poetry install
 source <(poetry env activate)

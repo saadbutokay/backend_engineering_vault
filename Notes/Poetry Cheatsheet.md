@@ -16,6 +16,8 @@ poetry build                     # Build distributable package
 poetry publish                   # Publish to PyPI
 poetry env info                  # Show venv info
 poetry lock                      # Regenerate lock file
+deactivate                       # deactivates poetry's venv
 exit                             # Leave the venv shell
 ```
 
+---

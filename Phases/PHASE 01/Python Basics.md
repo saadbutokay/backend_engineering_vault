@@ -13,7 +13,8 @@ code . # install it from your IDE first
 Or, with Poetry:
 ```bash
 cd ~/projects
-poetry new project_file_name
+poetry new project_folder_name
+cd project_folder_name
 poetry config virtualenvs.in-project true
 poetry install
 source <(poetry env activate)

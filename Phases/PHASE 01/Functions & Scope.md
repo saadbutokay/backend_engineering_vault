@@ -36,7 +36,7 @@ token = validate_token(request.headers.get("Authorization"))
 
 # Logic changes? Update ONE place. Done.
 ```
-**Functions are the foundation of maintainable code.**
+**Functions are the foundation of maintainable code.** Watch [this](https://youtu.be/89cGQjB5R4M) for better understanding.
 
 ---
 ## Setup
@@ -53,16 +53,18 @@ code .
 Or, with Poetry:
 ```bash
 cd ~/projects
-poetry new project_name
+poetry new project_folder_name
+cd project_folder_name
 poetry config virtualenvs.in-project true
 poetry install
 source <(poetry env activate)
-touch functions.py
+touch functions.pyc
 ```
 
 ---
 ## 1. Defining Functions
 In Python, you define a function using the **`def` keyword**, followed by the **function name**, **parentheses `()`**, and a **colon `:`**. The code block inside the function must be indented.
+
 ```python
 # functions.py
 
@@ -145,21 +147,18 @@ else:
 ## 2. Parameters & Arguments
 
 ### The Difference
-```
-Parameter = variable in the function DEFINITION
-Argument  = actual value you PASS when calling
-
-def greet(name):    ← "name" is a PARAMETER
+**Parameter** = variable in the function DEFINITION.
+**Argument**  = actual value you PASS when calling.
+```python
+def greet(name):    # "name" is a PARAMETER
     return f"Hello, {name}"
 
-greet("Alice")      ← "Alice" is an ARGUMENT
+greet("Alice")      # "Alice" is an ARGUMENT
 ```
 
 ### Default Arguments
+Parameters with default values. Defaults must come AFTER non-default parameters.
 ```python
-# Parameters with default values
-# Defaults must come AFTER non-default parameters
-
 def create_user(name, email, role="user", is_active=True):
     return {
         "name": name,
@@ -188,11 +187,9 @@ print(user3)
 ```
 
 ### The Mutable Default Argument Trap
+ONE OF THE MOST COMMON PYTHON BUGS, NEVER use mutable objects as defaults.
 ```python
-# ONE OF THE MOST COMMON PYTHON BUGS
-# NEVER use mutable objects as defaults
-
-# ❌ WRONG — BUG!
+# WRONG — BUG!
 def add_tag(tag, tags=[]):      # this list is created ONCE
     tags.append(tag)            # and shared across ALL calls
     return tags
@@ -200,12 +197,11 @@ def add_tag(tag, tags=[]):      # this list is created ONCE
 print(add_tag("python"))    # ['python']
 print(add_tag("fastapi"))   # ['python', 'fastapi'] ← bug!
 print(add_tag("redis"))     # ['python', 'fastapi', 'redis'] ← bug!
+```
+Why? The default `[]` is created once when the function is DEFINED, not each time it's CALLED. All calls share the same list object.
 
-# Why? The default [] is created once when the function
-# is DEFINED, not each time it's CALLED.
-# All calls share the same list object.
-
-# ✅ CORRECT — use None as default
+```python
+# CORRECT — use None as default
 def add_tag(tag, tags=None):
     if tags is None:
         tags = []           # create NEW list each call
@@ -215,12 +211,11 @@ def add_tag(tag, tags=None):
 print(add_tag("python"))    # ['python']
 print(add_tag("fastapi"))   # ['fastapi'] ← correct!
 print(add_tag("redis"))     # ['redis']   ← correct!
-
-# Same rule for dicts, sets, lists as defaults
-# Always use None and create inside the function
 ```
+Same rule for dicts, sets, lists as defaults, Always use None and create inside the function.
 
 ### Keyword Arguments
+Keyword arguments make code READABLE. You know what each value means without looking at the function.
 ```python
 def create_api_response(data, status_code, message, success):
     return {
@@ -230,10 +225,10 @@ def create_api_response(data, status_code, message, success):
         "data": data
     }
 
-# Positional — ORDER matters
+# Positional - ORDER matters
 response = create_api_response({"id": 1}, 200, "OK", True)
 
-# Keyword — ORDER doesn't matter
+# Keyword - ORDER doesn't matter
 response = create_api_response(
     data={"id": 1},
     status_code=200,
@@ -249,20 +244,14 @@ response = create_api_response(
     message="OK",       # keyword
     success=True        # keyword
 )
-
-# Keyword arguments make code READABLE
-# You know what each value means without looking at the function
 ```
 
 ---
 ## 3. `*args` and `**kwargs`
 
 ### `*args` - Variable Positional Arguments
-
+When you don't know how many arguments will be passed. `*args` collects them all into a TUPLE.
 ```python
-# When you don't know how many arguments will be passed
-# *args collects them all into a TUPLE
-
 def add_numbers(*args):
     print(type(args))   # <class 'tuple'>
     print(args)
@@ -299,10 +288,8 @@ print(len(users))   # 3
 ```
 
 ### `**kwargs` - Variable Keyword Arguments
-
+`**kwargs` collects keyword arguments into a DICT.
 ```python
-# **kwargs collects keyword arguments into a DICT
-
 def create_profile(**kwargs):
     print(type(kwargs))     # <class 'dict'>
     print(kwargs)
@@ -334,10 +321,10 @@ print(query)
 ```
 
 ### Combining Everything
+**Order MUST be:**
+`regular → *args → keyword-with-defaults → **kwargs
+`
 ```python
-# Order MUST be:
-# regular → *args → keyword-with-defaults → **kwargs
-
 def ultimate_function(required, *args, keyword_only="default", **kwargs):
     print(f"required: {required}")
     print(f"args: {args}")
@@ -375,26 +362,18 @@ def paginate_query(
 ```
 
 ---
-
 ## 4. Scope - The LEGB Rule
-
-### What is Scope?
-
-```
-Scope = where a variable is visible/accessible
-
+Scope = where a variable is visible/accessible.
 Python has 4 levels of scope:
-
+```
 L — Local      (inside the current function)
 E — Enclosing  (inside outer function, for nested functions)
 G — Global     (module level — top of the file)
 B — Built-in   (Python's own names: print, len, range...)
-
-Python looks for variables in this order: L → E → G → B
 ```
+Python looks for variables in this order: `L → E → G → B`
 
 ### Local Scope
-
 ```python
 def calculate_tax(price):
     # tax_rate is LOCAL — only exists inside this function
@@ -410,7 +389,6 @@ print(calculate_tax(100))   # 8.0
 ```
 
 ### Global Scope
-
 ```python
 # Global variable — defined at module (file) level
 APP_NAME = "MyBackendApp"
@@ -471,22 +449,24 @@ outer_function("Hello from outer")
 ```
 
 ### Built-in Scope
+Python's built-in names are always available - `len, print, range, type, int, str, list, dict` etc.
 ```python
-# Python's built-in names are always available
-# len, print, range, type, int, str, list, dict...
-
 print(len("hello"))     # 5  — len is built-in
 print(type(42))         # <class 'int'>  — type is built-in
 print(range(5))         # range(0, 5)  — range is built-in
 
-# ⚠️ Don't shadow built-ins by using their names as variables
+# Don't shadow built-ins by using their names as variables
 # This is a common beginner mistake
+```
 
-# ❌ BAD
+```python
+# BAD
 list = [1, 2, 3]        # you just overwrote the built-in list!
 print(list([4, 5, 6]))  # TypeError — list is now your variable, not the type
+```
 
-# ✅ GOOD
+```python
+# GOOD
 my_list = [1, 2, 3]
 numbers_list = [1, 2, 3]
 # Never name variables: list, dict, set, type, id, input, print, etc.
@@ -518,17 +498,8 @@ print(x)            # L: not here → E: not here → G: global → found! print
 ---
 
 ## 5. Closures
-
-### What is a Closure?
-
-```
-A closure is a function that REMEMBERS the variables
-from its enclosing scope, even after that scope is gone.
-
-Like a backpack — the inner function carries variables
-from the outer function wherever it goes.
-```
-
+A closure is a function that REMEMBERS the variables from its enclosing scope, even after that scope is gone.
+Like a backpack - the inner function carries variables from the outer function wherever it goes.
 ```python
 def make_multiplier(factor):
     # 'factor' lives in make_multiplier's scope
@@ -549,12 +520,10 @@ print(double(5))        # 10  (5 * 2)
 print(triple(5))        # 15  (5 * 3)
 print(times_ten(5))     # 50  (5 * 10)
 
-# make_multiplier has FINISHED running
-# but 'factor' is still alive inside double, triple, times_ten
+# make_multiplier has FINISHED running but 'factor' is still alive inside double, triple, times_ten
 ```
 
 ### Real Backend Use Cases
-
 ```python
 # Use case 1: Rate limiter factory
 def make_rate_limiter(max_calls_per_minute):
@@ -609,7 +578,6 @@ print(validate_password("SecurePass123!")) # None (valid)
 ```
 
 ### Inspecting Closures
-
 ```python
 def make_counter(start=0):
     count = start
@@ -632,19 +600,10 @@ print(counter(5))   # 17
 ```
 
 ---
-
 ## 6. Lambda Functions
+Lambda = anonymous (no-name) function written in ONE line for SIMPLE operations.
 
-### What are Lambdas?
-
-```
-Lambda = anonymous (no-name) function
-         written in ONE line
-         for SIMPLE operations
-
-Syntax: lambda parameters: expression
-```
-
+**Syntax:** `lambda parameters: expression`
 ```python
 # Regular function
 def square(x):
@@ -666,11 +625,8 @@ print(classify(7))  # odd
 ```
 
 ### When to Use Lambdas
-
+Lambdas shine as ONE-TIME functions passed as arguments to other functions.
 ```python
-# Lambdas shine as ONE-TIME functions
-# passed as arguments to other functions
-
 users = [
     {"name": "Charlie", "age": 30, "score": 85},
     {"name": "Alice", "age": 25, "score": 92},
@@ -708,43 +664,35 @@ print(slowest[0])
 ```
 
 ### Lambda Limitations
+Lambdas can only have ONE expression
+They cannot have:
+- Multiple lines
+- Statements `(if/else as statement, for, while)`
+- `return` keyword (it's implicit)
 
+**This doesn't work:**
 ```python
-# Lambdas can only have ONE expression
-# They cannot have:
-# - Multiple lines
-# - Statements (if/else as statement, for, while)
-# - return keyword (it's implicit)
+process = lambda x:
+    y = x * 2    # can't have statements
+    return y
+```
 
-# ❌ This doesn't work:
-# process = lambda x:
-#     y = x * 2    # can't have statements
-#     return y
-
-# ✅ Use a regular function for anything complex
+**Use a regular function for anything complex:**
+```python
 def process(x):
     y = x * 2
     return y
-
-# Rule: if lambda feels complicated → use def instead
 ```
+**Rule:** if lambda feels complicated → use `def` instead.
 
 ---
-
 ## 7. Higher-Order Functions
-
-### What are Higher-Order Functions?
-
-```
-A higher-order function either:
-1. Takes a function as an argument, OR
-2. Returns a function as output (like closures)
+A higher-order function either: Takes a function as an argument, OR Returns a function as output (like closures).
 
 Functions are "first-class" in Python:
 - Can be stored in variables
 - Can be passed as arguments
 - Can be returned from functions
-```
 
 ```python
 # Storing functions in variables
@@ -792,12 +740,11 @@ print(dispatch("POST", {}))     # {'method': 'POST', 'created': True}
 print(dispatch("PATCH", {}))    # {'error': 'Method not allowed'}
 ```
 
-### map() — Apply Function to Every Item
-
+### `map()` - Apply Function to Every Item
 ```python
 # map(function, iterable)
 # applies function to EACH item
-# returns a map object (lazy — use list() to see values)
+# returns a map object (lazy - use list() to see values)
 
 numbers = [1, 2, 3, 4, 5]
 
@@ -836,8 +783,7 @@ print(clean_users)
 #  {'name': 'Bob', 'email': 'bob@test.com'}]
 ```
 
-### filter() — Keep Items That Pass a Test
-
+### `filter()` - Keep Items That Pass a Test
 ```python
 # filter(function, iterable)
 # keeps items where function returns True
@@ -875,8 +821,7 @@ truthy_only = list(filter(None, mixed))
 print(truthy_only)  # [1, 'hello', True, [1, 2]]
 ```
 
-### reduce() — Collapse to Single Value
-
+### `reduce()` - Collapse to Single Value
 ```python
 from functools import reduce
 
@@ -926,19 +871,11 @@ print(merged)
 ```
 
 ---
-
 ## 8. Recursion
-
-### What is Recursion?
-
-```
-A function that calls ITSELF.
-Like Russian nesting dolls — each doll contains a smaller doll.
-
+A function that calls ITSELF. Like Russian nesting dolls - each doll contains a smaller doll.
 Every recursive function needs:
-1. BASE CASE — when to stop (no more calling itself)
-2. RECURSIVE CASE — call itself with a SMALLER problem
-```
+1. BASE CASE - when to stop (no more calling itself)
+2. RECURSIVE CASE - call itself with a SMALLER problem
 
 ```python
 # Classic example: factorial
@@ -975,7 +912,6 @@ print(factorial(1))     # 1
 ```
 
 ### Recursion with Data Structures
-
 ```python
 # Real backend use: traverse nested data
 
@@ -1038,7 +974,6 @@ print(tree[0]["replies"][0]["text"])# I agree!
 ```
 
 ### Recursion Limits
-
 ```python
 import sys
 
@@ -1060,11 +995,9 @@ sys.setrecursionlimit(10000)
 ```
 
 ---
-
 ## 9. `Docstrings` & Type Hints
 
 ### Docstrings
-
 ```python
 # Single line docstring
 def add(a, b):
@@ -1105,7 +1038,6 @@ print(create_user.__doc__)
 ```
 
 ### Type Hints
-
 ```python
 # Type hints tell you WHAT TYPE each parameter expects
 # and WHAT TYPE the function returns
@@ -1382,29 +1314,29 @@ print(register_user({
 │                    FUNCTIONS & SCOPE                         │
 │                                                              │
 │  FUNCTION ANATOMY:                                           │
-│  def name(param, *args, kwarg=default, **kwargs) -> type:   │
+│  def name(param, *args, kwarg=default, **kwargs) -> type:    │
 │      """docstring"""                                         │
 │      # body                                                  │
 │      return value                                            │
 │                                                              │
 │  SCOPE (LEGB):                                               │
-│  ┌─────────────────────────────────┐                        │
-│  │ Built-in (print, len, range...) │                        │
-│  │  ┌───────────────────────────┐  │                        │
-│  │  │ Global (module level)     │  │                        │
-│  │  │  ┌─────────────────────┐  │  │                        │
-│  │  │  │ Enclosing (outer fn)│  │  │                        │
-│  │  │  │  ┌───────────────┐  │  │  │                        │
-│  │  │  │  │ Local (inner) │  │  │  │                        │
-│  │  │  │  └───────────────┘  │  │  │                        │
-│  │  │  └─────────────────────┘  │  │                        │
-│  │  └───────────────────────────┘  │                        │
-│  └─────────────────────────────────┘                        │
-│  Python searches: L → E → G → B                             │
+│  ┌─────────────────────────────────┐                         │
+│  │ Built-in (print, len, range...) │                         │
+│  │  ┌───────────────────────────┐  │                         │
+│  │  │ Global (module level)     │  │                         │
+│  │  │  ┌─────────────────────┐  │  │                         │
+│  │  │  │ Enclosing (outer fn)│  │  │                         │
+│  │  │  │  ┌───────────────┐  │  │  │                         │
+│  │  │  │  │ Local (inner) │  │  │  │                         │
+│  │  │  │  └───────────────┘  │  │  │                         │
+│  │  │  └─────────────────────┘  │  │                         │
+│  │  └───────────────────────────┘  │                         │
+│  └─────────────────────────────────┘                         │
+│  Python searches: L → E → G → B                              │
 │                                                              │
 │  KEY CONCEPTS:                                               │
 │  *args    → variable positional args → tuple                 │
-│  **kwargs → variable keyword args   → dict                  │
+│  **kwargs → variable keyword args   → dict                   │
 │  lambda   → anonymous one-line function                      │
 │  closure  → function that remembers outer scope              │
 │  map()    → apply function to each item                      │
@@ -1414,7 +1346,6 @@ print(register_user({
 ```
 
 ---
-
 ## Knowledge Check
 
 1. What is the difference between a parameter and an argument?
@@ -1431,45 +1362,46 @@ print(register_user({
 12. What are type hints and do Python enforce them at runtime?
 
 ---
-
 ## Practice Exercises
+Exercise 1:
+```
+- Write a function make_greeting(greeting)
+- that returns a function that greets a person
+- greet_hello = make_greeting("Hello")
+- greet_hi = make_greeting("Hi")
+- print(greet_hello("Alice"))  → "Hello, Alice!"
+- print(greet_hi("Bob"))       → "Hi, Bob!"
+```
 
-```python
-# Exercise 1:
-# Write a function make_greeting(greeting)
-# that returns a function that greets a person
-# greet_hello = make_greeting("Hello")
-# greet_hi = make_greeting("Hi")
-# print(greet_hello("Alice"))  → "Hello, Alice!"
-# print(greet_hi("Bob"))       → "Hi, Bob!"
+Exercise 2:
+```
+- Write a function that takes a list of dicts (users)
+- and returns only users who:
+  - are active
+  - have a valid email (contains @ and .)
+  - have age >= 18
+- Use filter() and a helper validation function
+```
 
-# Exercise 2:
-# Write a function that takes a list of dicts (users)
-# and returns only users who:
-# - are active
-# - have a valid email (contains @ and .)
-# - have age >= 18
-# Use filter() and a helper validation function
+Exercise 3:
+```
+- Write a recursive function that sums all numbers
+- in a NESTED list (list of lists of lists...)
+- nested = [1, [2, 3], [4, [5, 6]], 7]
+- sum_nested(nested) → 28
+```
 
-# Exercise 3:
-# Write a recursive function that sums all numbers
-# in a NESTED list (list of lists of lists...)
-# nested = [1, [2, 3], [4, [5, 6]], 7]
-# sum_nested(nested) → 28
-
-# Exercise 4:
-# Write a function with *args and **kwargs
-# that builds an HTTP request log string
-# log_request("GET", "/users", status=200, duration=45)
-# → "[GET] /users | status=200 | duration=45ms"
+Exercise 4:
+```
+- Write a function with *args and **kwargs
+- that builds an HTTP request log string
+- log_request("GET", "/users", status=200, duration=45)
+- → "[GET] /users | status=200 | duration=45ms"
 ```
 
 ---
-
 ## Phase 1.2 Complete!
-
 **You now know:**
-
 ```
 ✅ Defining functions and return values
 ✅ All parameter types (positional, default, *args, **kwargs)

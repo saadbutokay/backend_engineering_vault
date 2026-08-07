@@ -44,8 +44,14 @@ mkdir -p projects/backend/myapp
 # Copy a file
 cp main.py main_backup.py
 
-# Move/rename a file
+# Copy a folder
+cp -R folder1_name folder2_name
+
+# Rename/Move a file
 mv main.py app.py
+
+# Rename/Move a folder
+mv folder1_name folder_new_name
 
 # Delete a file (careful — no trash, permanent)
 rm main.py

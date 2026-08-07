@@ -1,4 +1,4 @@
-You already learned WHAT virtual environments are in Phase 0.2. This phase is about MASTERING them hands-on.
+You already learned WHAT virtual environments are in [[Development Environment Setup]]. This phase is about MASTERING them hands-on.
 ```
 Why a dedicated phase?
 Every single project you build from now on starts here.
@@ -21,7 +21,6 @@ If you get this right:
 ---
 
 ## Setup For This Phase
-
 ```bash
 # Create a workspace to practice everything
 mkdir ~/projects/venv_mastery
@@ -1179,7 +1178,7 @@ else:
 
 ---
 
-## 8. The Complete .gitignore
+## 8. The Complete `.gitignore`
 
 ```bash
 # Save this as your standard Python .gitignore

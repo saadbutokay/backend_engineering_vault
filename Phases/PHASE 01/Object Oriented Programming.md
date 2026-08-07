@@ -59,7 +59,8 @@ code .
 Or, with Poetry:
 ```bash
 cd ~/projects
-poetry new project_name
+poetry new project_folder_name
+cd project_folder_name
 poetry config virtualenvs.in-project true
 poetry install
 source <(poetry env activate)
@@ -70,13 +71,10 @@ code .
 ---
 
 ## 1. Classes & Objects
-
+**CLASS** = blueprint / template.
+**OBJECT** = actual thing built from the blueprint.
 ### The Blueprint Analogy
-
 ```
-CLASS  = blueprint / template
-OBJECT = actual thing built from the blueprint
-
 Blueprint for a house:
   - Has: rooms, doors, windows
   - Can: open doors, turn on lights

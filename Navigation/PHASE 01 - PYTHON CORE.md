@@ -12,5 +12,4 @@ Follow the structure down.
 6. [[Virtual Environments]]
 
 ---
-
 *(No more content will be added as the roadmap is complete)*
