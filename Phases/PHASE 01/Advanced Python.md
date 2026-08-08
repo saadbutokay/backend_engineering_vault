@@ -1,8 +1,8 @@
 
-Phase 1.1 → You can write Python
-Phase 1.2 → You can organize Python into functions
-Phase 1.3 → You can model real world problems with classes
-Phase 1.4 → You write Python the way professionals do
+[[Python Basics]] → You can write Python
+[[Functions & Scope]] → You can organize Python into functions
+[[Object Oriented Programming]] → You can model real world problems with classes
+Advanced Python → You write Python the way professionals do
 
 This phase covers the features that:
 ```
@@ -16,7 +16,6 @@ This phase covers the features that:
 
 ---
 ## Setup
-
 ```bash
 cd ~/projects
 mkdir advanced_python
@@ -40,7 +39,6 @@ code .
 ```
 
 ---
-
 ## 1. Iterators & Generators
 
 ### Iterators First — Understanding the Foundation

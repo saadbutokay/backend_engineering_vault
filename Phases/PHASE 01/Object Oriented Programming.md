@@ -74,23 +74,19 @@ code .
 **CLASS** = blueprint / template.
 **OBJECT** = actual thing built from the blueprint.
 ### The Blueprint Analogy
-```
 Blueprint for a house:
   - Has: rooms, doors, windows
   - Can: open doors, turn on lights
 
+```
 House 1 (object 1): 3 rooms, red door, built in NYC
 House 2 (object 2): 5 rooms, blue door, built in LA
-
-Both follow the SAME blueprint (class)
-But each has its OWN data (instance variables)
 ```
+Both follow the SAME blueprint (class), but each has its OWN data (instance variables).
 
 ### Your First Class
-
 ```python
 # oop.py
-
 class User:
     pass  # empty class for now
 
@@ -108,35 +104,35 @@ print(id(bob))
 ```
 
 ---
-
 ## 2. `__init__` and `self`
+In Python, `__init__` is a **special method used to initialize new objects**, while `self` represents the **specific instance of the class** being created or manipulated. Together, they allow you to assign unique data to individual objects when using Object-Oriented Programming (OOP).
 
-### What is `__init__`?
+| Concept        | What It Is                | Purpose                                                 | How It is Passed                       |
+| -------------- | ------------------------- | ------------------------------------------------------- | -------------------------------------- |
+| **`__init__`** | Special built-in method   | Acts as an initializer/constructor to set up attributes | Called automatically by Python         |
+| **`self`**     | Parameter name convention | References the specific object being created/modified   | Passed automatically behind the scenes |
 
+### 2.1 What is `__init__`?
+`__init__` = the initializer (constructor).
+- It runs AUTOMATICALLY when you create an object.
+- It sets up the initial state of the object.
+
+`__init__` is a "dunder" method (double underscore on both sides)
+Also called "magic methods".
+
+### 2.2 What is `self`?
+`self` = the object itself.
+```python
+# When you write:
+alice = User("Alice", "alice@test.com")
+# Python calls:
+User.__init__(alice, "Alice", "alice@test.com")
+              # ↑
+        # self IS alice
 ```
-__init__ = the initializer (constructor)
-It runs AUTOMATICALLY when you create an object.
-It sets up the initial state of the object.
+`self` lets the method know WHICH object it's working on. You always write it as the FIRST parameter. You never pass it manually - Python does that.
 
-__init__ is a "dunder" method (double underscore on both sides)
-Also called "magic methods"
-```
-
-### What is `self`?
-
-```
-self = the object itself
-
-When you write: alice = User("Alice", "alice@test.com")
-Python calls:   User.__init__(alice, "Alice", "alice@test.com")
-                               ↑
-                         self IS alice
-
-self lets the method know WHICH object it's working on.
-You always write it as the FIRST parameter.
-You never pass it manually — Python does that.
-```
-
+### 2.3 Example
 ```python
 class User:
     def __init__(self, name: str, email: str, age: int):
@@ -168,10 +164,17 @@ print(bob.name)             # Bob — unchanged
 ```
 
 ---
-
 ## 3. Instance Methods, Class Methods, Static Methods
+In OOP languages in Python, **instance methods, class methods, and static methods** define how a function inside a class behaves and what data it can access.
+
+| Method Type         | Decorator       | First Argument      | Can Modify Instance State? | Can Modify Class State? |
+| ------------------- | --------------- | ------------------- | -------------------------- | ----------------------- |
+| **Instance Method** | None (Default)  | `self` (the object) | **Yes**                    | **Yes**                 |
+| **Class Method**    | `@classmethod`  | `cls` (the class)   | No                         | **Yes**                 |
+| **Static Method**   | `@staticmethod` | None                | No                         | No                      |
 
 ### Instance Methods
+In Python, an **instance method** is a function defined inside a class that **operates directly on a specific instance (object)** of that class. They are the most common type of method used in Python Object-Oriented Programming (OOP).
 
 ```python
 class User:
@@ -223,6 +226,7 @@ print(alice.is_active)        # False
 ```
 
 ### Class Methods
+In Python, a **class method** is a method that is bound to the class itself rather than its individual object instances. It is defined using the **`@classmethod` decorator** and automatically receives the class as its first argument, which is conventionally named `cls`.
 
 ```python
 class User:
@@ -295,6 +299,7 @@ print(charlie)  # User(name='Charlie', email='charlie@test.com')
 ```
 
 ### Static Methods
+In Python, a **static method** is a function defined inside a class that **does not have access to the instance (`self`) or the class (`cls`) data**. It behaves exactly like an ordinary function but lives inside the class's namespace for logical grouping and organization.
 
 ```python
 class User:
@@ -352,31 +357,87 @@ Class method   → needs access to CLASS itself (cls)
                   @classmethod
                   def method(cls):
 
-Static method  → doesn't need self OR cls
-                  utility/helper functions
-                  logically belongs to the class but doesn't USE the class
+Static method  → doesn't need self OR cls utility/helper functions
+                  logically belongs to the class
+                  but doesn't USE the class
+                  
                   @staticmethod
                   def method():
 ```
 
 ---
-
 ## 4. Encapsulation
+**Encapsulation in Python** is the Object-Oriented Programming (OOP) concept of **bundling data (attributes) and methods (functions) into a single unit (a class)** while restricting direct access to some of the object's components. Instead of modifying data directly, you interact with it through an interface to prevent accidental changes and maintain data integrity.
 
-### What is Encapsulation?
+Encapsulation = controlling access to data hiding internal implementation details exposing only what's necessary.
 
-```
-Encapsulation = controlling access to data
-                hiding internal implementation details
-                exposing only what's necessary
-
-Like a car:
-  Public:   steering wheel, pedals, gear shift (you interact with these)
-  Private:  engine internals, fuel injection system (you don't touch these directly)
-```
+**Like a car:**
+  - Public:   steering wheel, pedals, gear shift (you interact with these)
+  - Private:  engine internals, fuel injection system (you don't touch these directly)
 
 ### Public, Protected, Private
+In Python, **public, private, and protected members do not have strict enforcement** like they do in C++ or Java. Instead, Python relies on **naming conventions and a mechanism called name mangling** to control visibility and encapsulate data.
 
+| Access Level  | Naming Convention | Enforced by Language?           | Intended Access Scope                    |
+| ------------- | ----------------- | ------------------------------- | ---------------------------------------- |
+| **Public**    | `member`          | No                              | Anywhere (Inside, subclass, and outside) |
+| **Protected** | `_member`         | No (**Convention only**)        | Within the class and its subclasses      |
+| **Private**   | `__member`        | Partially via **Name Mangling** | Only inside the defining class           |
+
+#### 1. Public Members
+All class attributes and methods in Python are **public by default**. They can be read or modified freely from inside the class, by derived subclasses, or from outside the class instance.
+
+```python title:public.py
+class Car:
+def __init__(self, brand):
+    self.brand = brand  # Public attribute
+
+car = Car("Tesla")
+print(car.brand)  # Works: accessible outside the class
+```
+
+#### 2. Protected Members
+A member is marked protected by adding a **single leading underscore (`_`)** to its name.
+- This is strictly a **gentleman's agreement**.
+- Python will not throw an error if you access it from outside.
+- It serves as a visual warning to other developers that the member is intended for internal use and subclassing only.
+
+```python title:protected.py
+class Vehicle:
+    def __init__(self):
+        self._engine_type = "Electric"  # Protected attribute
+
+class Car(Vehicle):
+    def display(self):
+        print(self._engine_type)  # Intended usage: accessed in subclass
+
+car = Car()
+print(car._engine_type)  # Works, but highly discouraged by convention
+```
+
+#### 3. Private Members
+A member is marked private by adding a **double leading underscore (`__`)** to its name.
+- Python partially enforces this using **Name Mangling**.
+- If you try to call `instance.__variable` from outside the class, Python raises an `AttributeError`.
+- **How Name Mangling Works**: Internally, the interpreter renames the variable to `_ClassName__variable`. You can technically still access or break privacy by using this mangled name, though you should never do so in production code.
+- **Note:** _Avoid adding a double trailing underscore (like `__init__`), as those are reserved "dunder" methods and are public._
+
+```python title:private.py
+class BankAccount:
+    def __init__(self, pin):
+        self.__pin = pin  # Private attribute
+
+account = BankAccount(1234)
+
+# print(account.__pin)  
+# Error: AttributeError! Python hid it.
+
+# How to bypass via Name Mangling (Avoid doing this!):
+print(account._BankAccount__pin)  # Works: outputs 1234
+
+```
+
+#### All Together
 ```python
 class BankAccount:
     def __init__(self, owner: str, initial_balance: float):
@@ -440,11 +501,10 @@ print(account.get_history())  # ['Deposit: +$500', 'Withdrawal: -$200']
 ```
 
 ---
-
 ## 5. Property Decorators
+The **`@property` decorator** in Python is a built-in decorator that allows you to treat class methods like standard instance attributes. It provides an elegant way to implement **getters, setters, and deleters**, allowing you to execute background logic (such as data validation or logging) without breaking your class's public interface.
 
 ### The Problem
-
 ```python
 class User:
     def __init__(self, name: str, age: int):
@@ -457,8 +517,7 @@ user.age = -5       # negative age — wrong but allowed
 user.age = "old"    # string instead of int — wrong but allowed
 ```
 
-### Solution: @property
-
+### Solution: `@property`
 ```python
 class User:
     def __init__(self, name: str, age: int, email: str):
@@ -601,14 +660,11 @@ print(product.is_available)     # False
 ```
 
 ---
-
 ## 6. Inheritance
+**Inheritance in Python is a core Object-Oriented Programming (OOP) feature that allows a child class to adopt the attributes and methods of a parent class**. It maximizes code reusability and builds clear, logical hierarchies within a codebase
 
-### What is Inheritance?
-
-```
 Inheritance = a class INHERITS attributes and methods from another class.
-
+```
 Parent class (Base class) → has common functionality
 Child class (Subclass)    → inherits + adds specific stuff
 
@@ -619,6 +675,7 @@ Real world:
 ```
 
 ### Single Inheritance
+**Single inheritance in Python occurs when a child class (subclass) inherits attributes and methods from exactly one parent class (superclass)**. This represents a direct, one-to-one relationship that promotes code reusability and builds a clean logical hierarchy.
 
 ```python
 # BASE CLASS (Parent)
@@ -644,7 +701,9 @@ class BaseModel:
 
     def __repr__(self) -> str:
         return f"{self.__class__.__name__}(id={self.id})"
+```
 
+```python
 # CHILD CLASS — inherits from BaseModel
 class User(BaseModel):
     def __init__(self, id: int, name: str, email: str):
@@ -713,7 +772,8 @@ print(issubclass(Post, BaseModel))  # True
 print(issubclass(User, Post))       # False
 ```
 
-### super() — Calling Parent Methods
+### `super()` - Calling Parent Methods
+The **`super()` function in Python** gives you access to methods and properties of a parent (or sibling) class without naming it explicitly. It is primarily used to **extend or reuse parent class functionality** inside a subclass, ensuring clean initialization and proper method overriding.
 
 ```python
 class Vehicle:
@@ -764,6 +824,7 @@ print(tesla.stop())        # 2024 Tesla Model 3 stopped
 ```
 
 ### Multiple Inheritance & MRO
+**Multiple Inheritance** in Python occurs when a child class derives attributes and methods from **more than one parent class**. To handle conflicts when multiple parents share identical method names, Python relies on the **Method Resolution Order (MRO)**, an ordered lookup path computed via the **C3 Linearization algorithm**.
 
 ```python
 # Python allows inheriting from multiple classes
@@ -799,8 +860,7 @@ print(Duck.__mro__)
 # Python searches: Duck → Flyable → Swimmable → object
 ```
 
-### Real Backend — Mixins
-
+### Real Backend - `Mixins`
 ```python
 # Mixins — small reusable pieces
 
@@ -853,23 +913,18 @@ print(article.updated_at)    # 2024-01-16
 ```
 
 ---
-
 ## 7. Polymorphism
+**Polymorphism** in Python is a core Object-Oriented Programming (OOP) concept that allows **different types of objects to respond to the same method or function call** in their own unique ways. Derived from the Greek words for _"many forms,"_ it shifts the programming focus away from an object's specific class to its actionable behaviors, making code significantly more flexible, modular, and reusable.
 
-### What is Polymorphism?
-
-```
 Polymorphism = "many forms"
 Same method name → different behavior depending on the class
-
+```
 Like the word "speak":
   Human.speak() → "Hello"
   Dog.speak()   → "Woof"
   Cat.speak()   → "Meow"
-
-Same method name, different implementation.
-You can call .speak() on ANY animal without knowing the type.
 ```
+Same method name, different implementation. You can call `.speak()` on ANY animal without knowing the type.
 
 ```python
 class Notification:
@@ -944,9 +999,9 @@ send_all_notifications(notifications)
 ```
 
 ### Duck Typing
-
+**Duck typing** is a programming concept where an object's suitability for a task is determined by the presence of certain methods and attributes, rather than its actual type or explicit class inheritance.
 ```python
-# Duck typing — another form of polymorphism
+# Duck typing - another form of polymorphism
 # "If it walks like a duck and quacks like a duck, it's a duck"
 # Python doesn't require formal inheritance for polymorphism
 
@@ -962,13 +1017,11 @@ send_all_notifications(notifications)
 ```
 
 ---
-
 ## 8. Abstraction
+**Abstraction in Python** is the process of hiding complex internal implementation details and exposing only the essential features of an object. It reduces code complexity by forcing developers to focus on _what_ an object does rather than _how_ it does it.
 
-### What is Abstraction?
-
+Abstraction = define WHAT something does without defining HOW it does it.
 ```
-Abstraction = define WHAT something does without defining HOW it does it
 Like a contract: "Any class that inherits from me MUST implement these methods"
 If they don't implement them → Python raises an error
 ```
@@ -1113,9 +1166,8 @@ print(service.get_user(1))  # Alice
 ```
 
 ---
-
 ## 9. Magic/Dunder Methods
-
+**Magic methods** (also called **dunder methods** because they start and end with **d**ouble **under**scores) are special built-in Python methods that let you define how custom objects interact with standard syntax, operators, and built-in functions. You rarely call them directly; instead, Python triggers them automatically behind the scenes when you perform specific operations like adding numbers (`+`), fetching container lengths (`len()`), or printing an object.
 ```python
 class Vector:
     """2D Vector — shows common dunder methods."""
@@ -1199,7 +1251,6 @@ print([str(v) for v in sorted_vectors])
 ```
 
 ### The Most Important Dunders for Backend
-
 ```python
 class APIResponse:
     """Common dunders you'll actually use in backend code."""
@@ -1259,15 +1310,11 @@ with APIResponse({"id": 1}, 201) as resp:
 ```
 
 ---
-
 ## 10. Dataclasses
+A **Python dataclass** is a regular class decorated with `@dataclass` from the built-in `dataclasses` module that **automatically generates special boilerplate methods** like `__init__()`, `__repr__()`, and `__eq__()` based on type annotations. Introduced in Python 3.7, it streamlines the creation of classes meant primarily for storing data.
 
-### What are Dataclasses?
-
+Dataclasses = a shortcut for creating classes that mainly HOLD data.
 ```
-Dataclasses = a shortcut for creating classes
-that mainly HOLD data.
-
 Without dataclass: write __init__, __repr__, __eq__ manually
 With dataclass: decorator does it automatically
 ```
@@ -1350,8 +1397,7 @@ locations = {nyc: "New York City"}
 print(locations[Coordinates(40.7128, -74.0060)])  # New York City
 ```
 
-### Real Backend — API Models
-
+### Real Backend - API Models
 ```python
 # Real backend — API request/response models
 # (before you learn Pydantic, which does this even better)
@@ -1384,8 +1430,8 @@ print(request)
 ```
 
 ---
-
 ## 11. `__slots__`
+In Python, **`__slots__`** is a special class-level attribute that optimizes memory usage and speeds up attribute access by preventing the creation of the default instance dictionary (`__dict__`).
 
 ```python
 # __slots__ restricts what attributes an object can have
@@ -1435,11 +1481,17 @@ print(sys.getsizeof(WithSlots()))  # ~32 bytes (smaller)
 ```
 
 ---
-
 ## 12. Composition vs Inheritance
+In Python object-oriented programming, **inheritance** models an **"is-a" relationship** where a child class derives directly from a parent class. **Composition** models a **"has-a" relationship** where a class builds complex behavior by referencing instances of other independent classes as attributes.
+
+| Feature               | Inheritance                                     | Composition                                     |
+| --------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| **Relationship Type** | **"Is-a"** (e.g., A `Car` _is a_ `Vehicle`)     | **"Has-a"** (e.g., A `Car` _has an_ `Engine`)   |
+| **Coupling**          | **Tight**; modifications to parent cascade down | **Loose**; component classes remain independent |
+| **Flexibility**       | **Static**; defined at design time              | **Dynamic**; swap behaviors freely at runtime   |
+| **Code Reuse**        | Absorbs full implementation directly            | Delegates specific tasks via attributes         |
 
 ### The Classic Debate
-
 ```
 Inheritance: "IS A" relationship
   A Dog IS A Animal
@@ -1556,8 +1608,7 @@ print(tesla.start())               # 400hp electric engine started
 # This is the foundation of Dependency Injection.
 ```
 
-### Real Backend — Composition in Services
-
+### Real Backend - Composition in Services
 ```python
 # Real backend example — composition in services
 
@@ -1594,9 +1645,7 @@ service.register("Alice", "alice@test.com", "+1-555-0123")
 ```
 
 ---
-
-## Visual Summary — OOP Pillars
-
+## Visual Summary - OOP Pillars
 ```
 ┌──────────────────────────────────────────────────────────────┐
 │                        OOP PILLARS                           │
@@ -1642,7 +1691,6 @@ service.register("Alice", "alice@test.com", "+1-555-0123")
 ```
 
 ---
-
 ## Knowledge Check
 
 1. What is the difference between a class and an object?
@@ -1659,19 +1707,19 @@ service.register("Alice", "alice@test.com", "+1-555-0123")
 12. What is the mutable default in dataclasses and how do you fix it?
 
 ---
-
 ## Practice Exercises
-
-```python
-# Exercise 1:
+Exercise 1:
+```
 # Build a Shape hierarchy using ABC
 # - BaseShape: abstract methods → area(), perimeter()
 # - Concrete classes: Circle, Rectangle, Triangle
 # - Each implements area() and perimeter()
 # - Add a method print_info() to BaseShape
 #   that prints shape type, area, perimeter
+```
 
-# Exercise 2:
+Exercise 2:
+```
 # Build a simple Order management system using composition
 # Classes needed:
 #   - Customer (name, email)
@@ -1682,8 +1730,10 @@ service.register("Alice", "alice@test.com", "+1-555-0123")
 #   - total_price() → sum of all products
 #   - can_fulfill() → True if all products have enough stock
 #   - process() → deduct from stock, return receipt dict
+```
 
-# Exercise 3:
+Exercise 3:
+```
 # Create a dataclass for a BlogPost
 # Fields: id, title, content, author, tags (list), published, created_at
 # Add a method: word_count() → number of words in content
@@ -1692,10 +1742,8 @@ service.register("Alice", "alice@test.com", "+1-555-0123")
 ```
 
 ---
-
 ## Phase 1.3 Complete!
 **You now know:**
-
 ```
 ✅ Classes and objects
 ✅ __init__, self, instance variables

@@ -20,37 +20,8 @@
               "icon": "lucide-file",
               "title": "Functions & Scope"
             }
-          },
-          {
-            "id": "44ef7769fc7005d9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Phases/PHASE 01/Python Basics.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Python Basics"
-            }
-          },
-          {
-            "id": "7e6a92bbaf81e6c1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Navigation/PHASE 01 - PYTHON CORE.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "PHASE 01 - PYTHON CORE"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -141,7 +112,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Phases/PHASE 01/Python Basics.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +121,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Python Basics"
+              "title": "Backlinks"
             }
           },
           {
@@ -160,12 +130,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Phases/PHASE 01/Python Basics.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Python Basics"
+              "title": "Outgoing links"
             }
           },
           {
@@ -230,16 +199,16 @@
       "bases:Create new base": false
     }
   },
-  "active": "44ef7769fc7005d9",
+  "active": "83007a773d72ef69",
   "lastOpenFiles": [
+    "Phases/PHASE 01/Functions & Scope.md",
     "Navigation/PHASE 01 - PYTHON CORE.md",
     "README.md",
+    "Phases/PHASE 01/Advanced Python.md",
     "Phases/PHASE 01/Python Basics.md",
-    "Phases/PHASE 01/Functions & Scope.md",
+    "Phases/PHASE 01/Object Oriented Programming.md",
     "Phases/PHASE 01/Virtual Environments.md",
     "Phases/PHASE 01/Python Internals.md",
-    "Phases/PHASE 01/Advanced Python.md",
-    "Phases/PHASE 01/Object Oriented Programming.md",
     "Phases/PHASE 00/Prerequisite Briefing.md",
     "Phases/PHASE 00/Introduction To Python.md",
     "Phases/PHASE 00/How the Internet Works.md",
