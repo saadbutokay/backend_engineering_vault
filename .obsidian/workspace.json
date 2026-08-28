@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Phases/PHASE 01/Functions & Scope.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Functions & Scope"
+              "title": "README"
             }
           }
         ]
@@ -42,7 +42,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -112,6 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "ROADMAP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,7 +124,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for ROADMAP"
             }
           },
           {
@@ -130,6 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -199,35 +203,35 @@
       "bases:Create new base": false
     }
   },
-  "active": "83007a773d72ef69",
+  "active": "d6580b51e5f19adb",
   "lastOpenFiles": [
-    "Phases/PHASE 01/Functions & Scope.md",
-    "Navigation/PHASE 01 - PYTHON CORE.md",
+    "graph.json",
+    "JAVA/PHASE 01/Java - Encapsulation - Getters Setters Access Modifiers.md",
     "README.md",
-    "Phases/PHASE 01/Advanced Python.md",
+    "ROADMAP.md",
+    "circuit_analysis.md",
     "Phases/PHASE 01/Python Basics.md",
-    "Phases/PHASE 01/Object Oriented Programming.md",
+    "Navigation/PHASE 01 - PYTHON CORE.md",
+    "Untitled.md",
+    "RoadMap.md",
+    "Phases/PHASE 02/Data Structures.md",
+    "Navigation/PHASE 02 - DSA.md",
+    "Phases/PHASE 02/Python-Specific Efficiency.md",
+    "Phases/PHASE 02/Algorithms.md",
+    "Notes/Git Cheatsheet.md",
+    "Phases/PHASE 01/Functions & Scope.md",
+    "Phases/PHASE 01/Advanced Python.md",
+    "Navigation/PHASE 05 - ASYNC PROGRAMMING & CONCURRENCY.md",
+    "Phases/PHASE 05/Asyncio Fundamentals.md",
+    "Navigation/PHASE 04 - WEB FRAMEWORKS.md",
+    "Navigation/PHASE 03 - DATABASES.md",
     "Phases/PHASE 01/Virtual Environments.md",
     "Phases/PHASE 01/Python Internals.md",
-    "Phases/PHASE 00/Prerequisite Briefing.md",
-    "Phases/PHASE 00/Introduction To Python.md",
-    "Phases/PHASE 00/How the Internet Works.md",
-    "Phases/PHASE 00/Git & Version Control.md",
-    "Phases/PHASE 00/Development Environment Setup.md",
+    "Phases/PHASE 01/Object Oriented Programming.md",
     "Navigation/PHASE 00 - FOUNDATIONS.md",
-    "Notes/Poetry Cheatsheet.md",
-    "Notes/Terminal Cheatsheet.md",
-    "Notes/Git Cheatsheet.md",
-    "Notes/Python Project Structure.md",
-    "Untitled.md",
-    "Muscle.md",
+    "Phases/PHASE 00/Git & Version Control.md",
+    "Phases/PHASE 00/Prerequisite Briefing.md",
     "Notes",
-    "ReadME.md",
-    "Structures/PHASE 01 - Java Fundamentals.md",
-    "Phases/PHASE 01/Your First Java Program.md",
-    "Structures/PHASE 02 - OOP.md",
-    "Phases/PHASE 01/How Java Works.md",
-    "Structures/PHASE 00 - Environment Setup.md",
     "Phases/PHASE 02",
     "Phases/PHASE 01/Unconfirmed 316917.crdownload",
     "Phases/PHASE 01/Unconfirmed 100924.crdownload",
