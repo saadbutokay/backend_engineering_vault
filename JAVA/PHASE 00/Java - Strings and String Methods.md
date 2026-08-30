@@ -820,7 +820,7 @@ public class LogParser {
 
 - [[Java - Arrays - 1D and 2D]]
 - [[Java - Methods - Parameters Return Types Overloading]]
-- [[Java - File I/O - FileReader FileWriter BufferedReader]]
+- [[Java - File I-O - FileReader FileWriter BufferedReader]]
 
 ---
 ## Resources

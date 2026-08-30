@@ -860,7 +860,7 @@ public class InputValidation {
 
 - [[Java - Methods - Parameters Return Types Overloading]]
 - [[Java - Debugging Basics in IntelliJ]]
-- [[Java - File I/O - FileReader FileWriter BufferedReader]]
+- [[Java - File I-O - FileReader FileWriter BufferedReader]]
 
 ---
 

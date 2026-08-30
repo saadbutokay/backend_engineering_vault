@@ -1,0 +1,44 @@
+# System Files (OS specific)
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Common IDEs and Editors
+# Visual Studio Code
+.vscode/
+!.vscode/extensions.json
+*.code-workspace
+
+# IntelliJ / JetBrains
+.idea/
+*.iml
+*.iws
+
+# Eclipse
+.metadata/
+.classpath
+.project
+.settings/
+
+# Sublime Text / Vim
+*.sublime-project
+*.sublime-workspace
+.*.swp
+*~
+
+# Logs and Databases
+*.log
+logs/
+*.sqlite
+
+# Local Environment / Secrets (Safety net)
+.env
+.env.local
+.env.*.local
+
+# Obsidian
+.obsidian/
