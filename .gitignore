@@ -40,5 +40,8 @@ logs/
 .env.local
 .env.*.local
 
+# Files
+Roadmap.md
+
 # Obsidian
 .obsidian/
