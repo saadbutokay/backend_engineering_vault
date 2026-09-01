@@ -8,20 +8,15 @@ Welcome to the Backend Engineering with Python! This repository contains notes, 
 ## What to do?
 1. Download Obsidian for better studying. Link for Obsidian: https://obsidian.md
 2. For Obsidian plugins, go to settings, community plugins and download `code styler`. This is a must.
-3. Go to Navigation folder to find [[PHASE 00 - FOUNDATIONS]], [[PHASE 01 - PYTHON CORE]] etc. to understand the layout and to find what is where.
+3. Follow [[#Contents]] below to get what you want to learn.
 
 Have fun.
 
 ---
-## Contents from Navigation
-1. [[PHASE 00 - FOUNDATIONS]]
-2. [[PHASE 01 - PYTHON CORE]]
-3. [[PHASE 02 - DSA]]
-4. [[PHASE 03 - DATABASES]]
-5. [[PHASE 04 - WEB FRAMEWORKS]]
-6. [[PHASE 05 - ASYNC PROGRAMMING & CONCURRENCY]]
-7. [[PHASE 06 - TESTING & CODE QUALITY]]
-8. [[PHASE 07 - DevOps, DEPLOYMENT & INFRASTRUCTURE]]
+## Contents
+
+1. [[Java Roadmap]]
+2. [[Python Roadmap]]
 
 ---
  ###### Studied & Authored by Abdullah Al Sayb Saad.
