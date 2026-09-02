@@ -49,7 +49,7 @@ This phase is identical to the Python roadmap. If you completed it there, skip i
 - SSH basics
 ```
 
-### 04 - What Is Software Engineering
+### 04 - [[What Is Software Engineering]]
 
 ```
 - Software engineering vs programming
@@ -65,7 +65,7 @@ This phase is identical to the Python roadmap. If you completed it there, skip i
 - How to ask technical questions
 ```
 
-### 05 - Engineering Culture and Mindset
+### 05 - [[Engineering Culture And Mindset]]
 
 ```
 - How to read error messages and stack traces
@@ -101,7 +101,7 @@ Project: "My Machine" Documentation
 Java has more upfront ceremony than Python. The type system, compilation model, memory model, and OOP depth are all heavier. This phase is longer because Java demands it. Do not rush. Every enterprise Java codebase you will ever touch relies on these fundamentals.
 
 ---
-### 1.01 - Environment Setup
+### 1.01 - [[Environment Setup]]
 
 ```
 - SDKMAN: managing multiple JDK versions
@@ -122,7 +122,7 @@ Java has more upfront ceremony than Python. The type system, compilation model, 
 - Your first program: public static void main(String[] args)
 ```
 
-### 1.02 - Syntax and Basics
+### 1.02 - [[Syntax And Basics]]
 
 ```
 - Java syntax structure (class-based, every file needs a class)
@@ -163,7 +163,7 @@ Java has more upfront ceremony than Python. The type system, compilation model, 
 - Constants (final keyword)
 ```
 
-### 1.03 - Control Flow
+### 1.03 - [[Control Flow]]
 
 ```
 - if / else if / else
@@ -180,7 +180,7 @@ Java has more upfront ceremony than Python. The type system, compilation model, 
 - Nested loops
 ```
 
-### 1.04 - Arrays
+### 1.04 - [[Arrays]]
 
 ```
 - Array declaration, initialization, access
@@ -193,7 +193,7 @@ Java has more upfront ceremony than Python. The type system, compilation model, 
 - Command-line arguments (args array)
 ```
 
-### 1.05 - Object-Oriented Programming (Deep Dive)
+### 1.05 - [[Object Oriented Programming]] (Deep Dive)
 
 ```
 This is the most critical section for Java. Java is OOP to its core.
@@ -290,7 +290,7 @@ Enums:
     - Enums implementing interfaces
 ```
 
-### 1.06 - Java Collections Framework
+### 1.06 - [[Java Collections Framework]]
 
 ```
 This is the equivalent of Python's built-in data structures but far more extensive.
@@ -370,7 +370,7 @@ Iterator and Iterable:
     - ListIterator
 ```
 
-### 1.07 - Generics
+### 1.07 - [[Generics]]
 
 ```
 - Why generics exist (type safety, code reuse)
@@ -395,7 +395,7 @@ Iterator and Iterable:
 - Diamond operator (<>)
 ```
 
-### 1.08 - Exception Handling
+### 1.08 - [[Exception Handling]]
 
 ```
 - Exception hierarchy:
@@ -445,7 +445,7 @@ Iterator and Iterable:
     - When to use Optional (return types, not fields or parameters)
 ```
 
-### 1.09 - File I/O and Serialization
+### 1.09 - [[File IO And Serialization]]
 
 ```
 - Java I/O evolution:
@@ -491,7 +491,7 @@ Iterator and Iterable:
     - Java serialization (Serializable) — understand but avoid in production
 ```
 
-### 1.10 - Functional Programming in Java
+### 1.10 - [[Functional Programming in Java]]
 
 ```
 - Functional interfaces:
@@ -560,7 +560,7 @@ Iterator and Iterable:
     - Using with streams
 ```
 
-### 1.11 - Concurrency and Multithreading
+### 1.11 - [[Concurrency and Multithreading]]
 
 ```
 Java concurrency is a critical differentiator from Python. This is why Java dominates fintech.
@@ -638,7 +638,7 @@ Thread safety best practices:
     - Prefer higher-level abstractions (ExecutorService, CompletableFuture)
 ```
 
-### 1.12 - Modules, Packages, and the Build System (Conceptual)
+### 1.12 - [[Modules, Packages, and the Build System]] (Conceptual)
 
 ```
 - Packages:
@@ -664,7 +664,7 @@ Thread safety best practices:
 - Classpath vs module path
 ```
 
-### 1.13 - Annotations
+### 1.13 - [[Annotations]]
 
 ```
 - What annotations are (metadata)
