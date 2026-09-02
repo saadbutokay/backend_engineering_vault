@@ -679,7 +679,7 @@ Thread safety best practices:
 - Annotations in frameworks (Spring, JPA, Jackson — preview)
 ```
 
-### 1.14 - Reflection (Overview)
+### 1.14 - [[Reflection]] (Overview)
 
 ```
 - What reflection is
@@ -691,7 +691,7 @@ Thread safety best practices:
 - When NOT to use reflection in application code
 ```
 
-### 1.15 - Logging
+### 1.15 - [[Logging]]
 
 ```
 - Why logging matters
@@ -713,7 +713,7 @@ Thread safety best practices:
     - Correlation IDs
 ```
 
-### 1.16 - Testing in Java
+### 1.16 - [[Testing In Java]]
 
 ```
 - JUnit 5 (Jupiter):
@@ -762,7 +762,7 @@ Thread safety best practices:
     - When TDD helps, when it hinders
 ```
 
-### 1.17 - Date and Time API
+### 1.17 - [[Date Time API]]
 
 ```
 - Why java.util.Date and Calendar are broken (legacy, avoid)
@@ -782,7 +782,7 @@ Thread safety best practices:
 - Timezone handling best practices (store UTC, display local)
 ```
 
-### 1.18 - Regular Expressions in Java
+### 1.18 - [[Regular Expressions]]
 
 ```
 - java.util.regex: Pattern, Matcher
@@ -822,7 +822,6 @@ Project 01B: "Personal Finance Calculator"
 ```
 
 ---
-
 ## PHASE 02 / DEVELOPER TOOLING
 **Follow the structure down.**
 *Duration: 2-3 weeks at 6 hours/day*
@@ -955,7 +954,7 @@ Gradle:
     - When VS Code is sufficient vs when IntelliJ is necessary
 ```
 
-### PHASE 02 CHAPTER PROJECT
+### Phase 02 Projects
 
 ```
 Project 02: "Development Environment and Workflow"
