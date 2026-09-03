@@ -830,7 +830,7 @@ Java tooling is heavier than Python. Build tools are non-negotiable.
 
 ---
 
-### 02.01 — Terminal Mastery (Bash/Zsh)
+### 2.01 - [[Terminal Mastery]] (Bash/Zsh)
 
 ```
 - (Same as Python roadmap — if completed, skip)
@@ -844,7 +844,7 @@ Java tooling is heavier than Python. Build tools are non-negotiable.
 - Dotfiles management
 ```
 
-### 02.02 — Git and GitHub
+### 2.02 - [[Git And Github]]
 
 ```
 - (Same as Python roadmap — if completed, skip)
@@ -856,7 +856,7 @@ Java tooling is heavier than Python. Build tools are non-negotiable.
 - SSH setup
 ```
 
-### 02.03 — Build Tools
+### 2.03 - [[Build Tools]]
 
 ```
 Maven:
@@ -895,7 +895,7 @@ Gradle:
   then Gradle.
 ```
 
-### 02.04 — Code Quality Tools
+### 2.04 - [[Code Quality Tools]]
 
 ```
 - Code style:
@@ -918,7 +918,7 @@ Gradle:
     - Snyk (overview)
 ```
 
-### 02.05 — IDE
+### 2.05 - [[IDE]]
 
 ```
 - IntelliJ IDEA:
