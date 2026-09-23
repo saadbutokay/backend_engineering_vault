@@ -42,7 +42,7 @@ print(alice.get_display())   # Alice <alice@test.com>
 alice.deactivate()
 print(alice.is_active)       # False
 ```
-**OOP bundles DATA and BEHAVIOR together into one unit called a CLASS.**
+**OOP bundles DATA and BEHAVIOR together into one unit called a CLASS.** Watch [this](https://youtu.be/IbMDCwVm63M).
 
 ---
 ## Setup
@@ -104,7 +104,7 @@ print(id(bob))
 
 ---
 ## 2. `__init__` and `self`
-In Python, `__init__` is a **special method used to initialize new objects**, while `self` represents the **specific instance of the class** being created or manipulated. Together, they allow you to assign unique data to individual objects when using Object-Oriented Programming (OOP).
+In Python, `__init__` is a **special method used to initialize new objects**, while `self` represents the **specific instance of the class** being created or manipulated. Together, they allow you to assign unique data to individual objects when using Object-Oriented Programming.
 
 | Concept        | What It Is                | Purpose                                                 | How It is Passed                       |
 | -------------- | ------------------------- | ------------------------------------------------------- | -------------------------------------- |
@@ -116,8 +116,7 @@ In Python, `__init__` is a **special method used to initialize new objects**, wh
 - It runs AUTOMATICALLY when you create an object.
 - It sets up the initial state of the object.
 
-`__init__` is a "dunder" method (double underscore on both sides)
-Also called "magic methods".
+`__init__` is a *"dunder"* method (double underscore on both sides). Also called "magic methods".
 
 ### 2.2 What is `self`?
 `self` = the object itself.
@@ -166,15 +165,14 @@ print(bob.name)             # Bob — unchanged
 ## 3. Instance Methods, Class Methods, Static Methods
 In OOP languages in Python, **instance methods, class methods, and static methods** define how a function inside a class behaves and what data it can access.
 
-| Method Type         | Decorator       | First Argument      | Can Modify Instance State? | Can Modify Class State? |
-| ------------------- | --------------- | ------------------- | -------------------------- | ----------------------- |
-| **Instance Method** | None (Default)  | `self` (the object) | **Yes**                    | **Yes**                 |
-| **Class Method**    | `@classmethod`  | `cls` (the class)   | No                         | **Yes**                 |
-| **Static Method**   | `@staticmethod` | None                | No                         | No                      |
+| Method Type         | [[Advanced Python#2. Decorators\|Decorators]] | First Argument      | Can Modify Instance State? | Can Modify Class State? |
+| ------------------- | --------------------------------------------- | ------------------- | -------------------------- | ----------------------- |
+| **Instance Method** | None (Default)                                | `self` (the object) | **Yes**                    | **Yes**                 |
+| **Class Method**    | `@classmethod`                                | `cls` (the class)   | No                         | **Yes**                 |
+| **Static Method**   | `@staticmethod`                               | None                | No                         | No                      |
 
 ### Instance Methods
 In Python, an **instance method** is a function defined inside a class that **operates directly on a specific instance (object)** of that class. They are the most common type of method used in Python Object-Oriented Programming (OOP).
-
 ```python
 class User:
     def __init__(self, name: str, email: str, age: int):
@@ -225,8 +223,7 @@ print(alice.is_active)        # False
 ```
 
 ### Class Methods
-In Python, a **class method** is a method that is bound to the class itself rather than its individual object instances. It is defined using the **`@classmethod` decorator** and automatically receives the class as its first argument, which is conventionally named `cls`.
-
+In Python, a **class method** is a method that is bound to the class itself rather than its individual object instances. It is defined using the **`@classmethod` decorator** and automatically receives the class as its first argument, which is conventionally named `cls`. Watch [this](https://youtu.be/g-qRKZD3FgE). You can learn [[Advanced Python#2. Decorators|Decorators]] before studying this.
 ```python
 class User:
     # Class variable — SHARED by ALL instances
@@ -298,7 +295,7 @@ print(charlie)  # User(name='Charlie', email='charlie@test.com')
 ```
 
 ### Static Methods
-In Python, a **static method** is a function defined inside a class that **does not have access to the instance (`self`) or the class (`cls`) data**. It behaves exactly like an ordinary function but lives inside the class's namespace for logical grouping and organization.
+In Python, a **static method** is a function defined inside a class that **does not have access to the instance (`self`) or the class (`cls`) data**. It behaves exactly like an ordinary function but lives inside the class's namespace for logical grouping and organization. Watch [this](https://youtu.be/GZYWTm7JoWs).
 
 ```python
 class User:
@@ -344,7 +341,6 @@ print(alice.validate_email("test@test.com"))   # True (works on instance too)
 ```
 
 ### When to Use Which?
-
 ```
 Instance method → needs access to instance data (self)
                   most common type
@@ -501,7 +497,7 @@ print(account.get_history())  # ['Deposit: +$500', 'Withdrawal: -$200']
 
 ---
 ## 5. Property Decorators
-The **`@property` decorator** in Python is a built-in decorator that allows you to treat class methods like standard instance attributes. It provides an elegant way to implement **getters, setters, and deleters**, allowing you to execute background logic (such as data validation or logging) without breaking your class's public interface.
+The **`@property` decorator** in Python is a built-in decorator that allows you to treat class methods like standard instance attributes. It provides an elegant way to implement **getters, setters, and deleters**, allowing you to execute background logic (such as data validation or logging) without breaking your class's public interface. Watch [this](https://youtu.be/HkbQ_NaH0Lc).
 
 ### The Problem
 ```python
@@ -517,6 +513,9 @@ user.age = "old"    # string instead of int — wrong but allowed
 ```
 
 ### Solution: `@property`
+The **`@property` decorator** in Python is a built-in tool that allows you to define a method but access it **like a regular data attribute** (without using parentheses `()`).
+
+It is primarily used to implement **getters, setters, and deleters** in an elegant, Pythonic way. This lets you enforce validation, compute values on the fly, or make attributes read-only without breaking the public API of your class.
 ```python
 class User:
     def __init__(self, name: str, age: int, email: str):
@@ -660,7 +659,7 @@ print(product.is_available)     # False
 
 ---
 ## 6. Inheritance
-**Inheritance in Python is a core Object-Oriented Programming (OOP) feature that allows a child class to adopt the attributes and methods of a parent class**. It maximizes code reusability and builds clear, logical hierarchies within a codebase
+**Inheritance** in Python is a core Object-Oriented Programming (OOP) feature that allows a child class to adopt the attributes and methods of a parent class. It maximizes code reusability and builds clear, logical hierarchies within a codebase
 
 Inheritance = a class INHERITS attributes and methods from another class.
 ```
@@ -674,8 +673,7 @@ Real world:
 ```
 
 ### Single Inheritance
-**Single inheritance in Python occurs when a child class (subclass) inherits attributes and methods from exactly one parent class (superclass)**. This represents a direct, one-to-one relationship that promotes code reusability and builds a clean logical hierarchy.
-
+**Single inheritance in Python occurs when a child class (subclass) inherits attributes and methods from exactly one parent class (superclass)**. This represents a direct, one-to-one relationship that promotes code reusability and builds a clean logical hierarchy. Watch [this](https://youtu.be/an59YHkdK9A) for inheritance.
 ```python
 # BASE CLASS (Parent)
 class BaseModel:
@@ -702,6 +700,7 @@ class BaseModel:
         return f"{self.__class__.__name__}(id={self.id})"
 ```
 
+Watch [this](https://youtu.be/HzyhmZqiaE8) for `super()` function.
 ```python
 # CHILD CLASS — inherits from BaseModel
 class User(BaseModel):
@@ -823,8 +822,7 @@ print(tesla.stop())        # 2024 Tesla Model 3 stopped
 ```
 
 ### Multiple Inheritance & MRO
-**Multiple Inheritance** in Python occurs when a child class derives attributes and methods from **more than one parent class**. To handle conflicts when multiple parents share identical method names, Python relies on the **Method Resolution Order (MRO)**, an ordered lookup path computed via the **C3 Linearization algorithm**.
-
+**Multiple Inheritance** in Python occurs when a child class derives attributes and methods from **more than one parent class**. To handle conflicts when multiple parents share identical method names, Python relies on the **Method Resolution Order (MRO)**, an ordered lookup path computed via the **C3 Linearization algorithm**. Watch [this](https://youtu.be/Q8YlYHjksLo).
 ```python
 # Python allows inheriting from multiple classes
 # MRO = Method Resolution Order
@@ -923,7 +921,7 @@ Like the word "speak":
   Dog.speak()   → "Woof"
   Cat.speak()   → "Meow"
 ```
-Same method name, different implementation. You can call `.speak()` on ANY animal without knowing the type.
+Same method name, different implementation. You can call `.speak()` on ANY animal without knowing the type. Watch [this](https://youtu.be/tHN8I_4FIt8).
 
 ```python
 class Notification:
@@ -998,7 +996,7 @@ send_all_notifications(notifications)
 ```
 
 ### Duck Typing
-**Duck typing** is a programming concept where an object's suitability for a task is determined by the presence of certain methods and attributes, rather than its actual type or explicit class inheritance.
+**Duck typing** is a programming concept where an object's suitability for a task is determined by the presence of certain methods and attributes, rather than its actual type or explicit class inheritance. Watch [this](https://youtu.be/Qe03kCuTMoU).
 ```python
 # Duck typing - another form of polymorphism
 # "If it walks like a duck and quacks like a duck, it's a duck"
@@ -1024,7 +1022,7 @@ Abstraction = define WHAT something does without defining HOW it does it.
 Like a contract: "Any class that inherits from me MUST implement these methods"
 If they don't implement them → Python raises an error
 ```
-
+Watch [this](https://youtu.be/97V7ICVeTJc).
 ```python
 from abc import ABC, abstractmethod
 from typing import List, Optional
@@ -1165,8 +1163,9 @@ print(service.get_user(1))  # Alice
 ```
 
 ---
-## 9. Magic/Dunder Methods
+## 9. `Magic/Dunder` Methods
 **Magic methods** (also called **dunder methods** because they start and end with **d**ouble **under**scores) are special built-in Python methods that let you define how custom objects interact with standard syntax, operators, and built-in functions. You rarely call them directly; instead, Python triggers them automatically behind the scenes when you perform specific operations like adding numbers (`+`), fetching container lengths (`len()`), or printing an object.
+Watch [this](https://youtu.be/qqp6QN20CpE). Also [this](https://youtu.be/NwjSP1_WEfE) (BroCode).
 ```python
 class Vector:
     """2D Vector — shows common dunder methods."""
@@ -1310,7 +1309,7 @@ with APIResponse({"id": 1}, 201) as resp:
 
 ---
 ## 10. Dataclasses
-A **Python dataclass** is a regular class decorated with `@dataclass` from the built-in `dataclasses` module that **automatically generates special boilerplate methods** like `__init__()`, `__repr__()`, and `__eq__()` based on type annotations. Introduced in Python 3.7, it streamlines the creation of classes meant primarily for storing data.
+A **Python dataclass** is a regular class decorated with `@dataclass` from the built-in `dataclasses` module that **automatically generates special boilerplate methods** like `__init__()`, `__repr__()`, and `__eq__()` based on type annotations. Introduced in Python 3.7, it streamlines the creation of classes meant primarily for storing data. Watch [this](https://youtu.be/Gsfsq2epdr8).
 
 Dataclasses = a shortcut for creating classes that mainly HOLD data.
 ```
@@ -1329,7 +1328,7 @@ class UserOld:
     def __init__(self, id: int, name: str, email: str):
         self.id = id
         self.name = name
-        self.email = email
+        self.email = emai
     def __repr__(self):
         return f"User(id={self.id}, name={self.name!r})"
     def __eq__(self, other):
@@ -1430,7 +1429,7 @@ print(request)
 
 ---
 ## 11. `__slots__`
-In Python, **`__slots__`** is a special class-level attribute that optimizes memory usage and speeds up attribute access by preventing the creation of the default instance dictionary (`__dict__`).
+In Python, **`__slots__`** is a special class-level attribute that optimizes memory usage and speeds up attribute access by preventing the creation of the default instance dictionary (`__dict__`). Watch [this](https://youtu.be/Iwf17zsDAnY).
 
 ```python
 # __slots__ restricts what attributes an object can have

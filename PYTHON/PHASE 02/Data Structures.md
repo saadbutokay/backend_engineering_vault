@@ -36,7 +36,6 @@ O(2ⁿ)     = exponential → unusable for large n (terrible)
 ```
 
 **Visualizing growth:**
-
 ```
 n = number of items
 
@@ -61,7 +60,6 @@ THIS is why data structures matter.
 ```
 
 ---
-
 ## Setup
 
 ```bash
@@ -74,11 +72,9 @@ code .
 ```
 
 ---
-
 ## 1. Arrays / Lists (Dynamic Arrays)
 
 ### What is an Array?
-
 ```
 An array stores elements in CONTIGUOUS memory locations.
 Each element sits right next to the previous one.
@@ -97,7 +93,6 @@ Why contiguous?
 ```
 
 ### Python Lists ARE Dynamic Arrays
-
 ```python
 # ds.py
 

@@ -1,7 +1,7 @@
 [[Python Basics]] → You can write Python
 [[Functions & Scope]] → You can organize Python into functions
 [[Object Oriented Programming]] → You can model real world problems with classes
-Advanced Python → You write Python the way professionals do
+**Advanced Python** → You write Python the way professionals do
 
 This phase covers the features that:
 ```
@@ -39,9 +39,11 @@ code .
 
 ---
 ## 1. Iterators & Generators
+In Python, **iterators and generators are tools used for memory-efficient, lazy evaluation** of data streams. They allow you to process data one item at a time instead of loading entire datasets into memory at once.
+### Iterators
+In Python, an **iterator** is an object that allows you to traverse through all the elements of a collection (like a list, tuple, or dictionary) **one element at a time**. Technically, a Python iterator is any object that implements the **Iterator Protocol**, which consists of two special methods: `__iter__()` and `__next__()`.
 
-### Iterators First - Understanding the Foundation
-```python title:advanced.py
+```python title:iterator.py
 # What happens when you write: for item in something
 # Python calls iter() on it → gets an iterator
 # Then calls next() repeatedly → gets each item
@@ -75,7 +77,7 @@ class CountUp:
             raise StopIteration
         value = self.current
         self.current += 1
-        return value
+        return valus
 
 counter = CountUp(1, 5)
 for n in counter:
@@ -89,8 +91,12 @@ print(next(counter2))   # 2
 print(next(counter2))   # 3
 ```
 
-### Generators - The Better Way
-```python
+### Generators
+In Python, a **generator** is a special type of function that returns an iterable **generator object**. Unlike regular functions that calculate an entire dataset and return it all at once, generators use the **`yield` keyword** to produce values **one at a time, on demand**.
+
+Because they generate data dynamically instead of storing the entire sequence in memory, they are incredibly **memory-efficient** and are the industry-standard choice for handling large files, data streams, or infinite loops.
+
+```python title:generators.py
 # Generators are functions that YIELD values one at a time
 # instead of computing everything and returning a list
 
@@ -154,7 +160,6 @@ except StopIteration:
 ### Why Generators? Memory Efficiency
 ```python
 import sys
-
 # ─────────────────────────────────────────
 # THE MEMORY PROBLEM without generators
 # ─────────────────────────────────────────
@@ -275,16 +280,11 @@ print()
 
 ---
 ## 2. Decorators
-
-### What is a Decorator?
+A decorator is a function that WRAPS another function adding behavior BEFORE and/or AFTER it runs.
 ```
-A decorator is a function that WRAPS another function
-adding behavior BEFORE and/or AFTER it runs.
-
 Like a sandwich: bread (before code) + your function + bread (after code)
-
-Used for: logging, authentication, caching, timing, validation, rate limiting...
 ```
+**Used for:** logging, authentication, caching, timing, validation, rate limiting.
 
 ### Understanding Functions as Objects First
 ```python

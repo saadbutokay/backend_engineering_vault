@@ -18,6 +18,6 @@ poetry env info                  # Show venv info
 poetry lock                      # Regenerate lock file
 deactivate                       # deactivates poetry's venv
 exit                             # Leave the venv shell
-```p
+```
 
 ---

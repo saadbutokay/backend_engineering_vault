@@ -65,9 +65,7 @@ touch functions.py
 ## 1. Defining Functions
 In Python, you define a function using the **`def` keyword**, followed by the **function name**, **parentheses `()`**, and a **colon `:`**. The code block inside the function must be indented.
 
-```python
-# functions.py
-
+```python title:functions.py
 #   keyword  name      parameters
 #     ↓       ↓         ↓
 def greet(name, greeting):
@@ -324,8 +322,8 @@ print(query)
 
 ### Combining Everything
 **Order MUST be:**
-`regular → *args → keyword-with-defaults → **kwargs
-`
+`regular → *args → keyword-with-defaults → **kwargs`
+
 ```python
 def ultimate_function(required, *args, keyword_only="default", **kwargs):
     print(f"required: {required}")
@@ -742,6 +740,8 @@ print(dispatch("PATCH", {}))    # {'error': 'Method not allowed'}
 ```
 
 ### `map()` - Apply Function to Every Item
+The **`map()` function** in Python applies a specified function to every item of an iterable (like a list, tuple, or string) and returns a **lazy iterator** (a map object). It allows you to process data element-by-element without using explicit `for` loops, making your code shorter and cleaner.
+Watch [this](https://youtu.be/OXfcmRFne0Q).
 ```python
 # map(function, iterable)
 # applies function to EACH item
@@ -785,6 +785,8 @@ print(clean_users)
 ```
 
 ### `filter()` - Keep Items That Pass a Test
+The **`filter()` function** in Python is a built-in tool used to extract elements from an iterable (like a list, tuple, or set) that satisfy a specific condition. It is a memory-efficient higher-order function because it returns an **iterator (a filter object)** instead of creating a new list immediately. To view or use the results as a list, you must explicitly convert it using a constructor like `list()`.
+Watch [this](https://youtu.be/kosZevWurtE).
 ```python
 # filter(function, iterable)
 # keeps items where function returns True
@@ -823,6 +825,9 @@ print(truthy_only)  # [1, 'hello', True, [1, 2]]
 ```
 
 ### `reduce()` - Collapse to Single Value
+The **`reduce()` function** in Python applies a specified function cumulatively to the items of an iterable, processing them from left to right, to eventually **reduce the entire sequence to a single value**.
+
+Unlike `map()` or `filter()`, `reduce()` is not a built-in function and must be imported from the **`functools` module**. Watch [this](https://youtu.be/mH_hLmZs1h8).
 ```python
 from functools import reduce
 
@@ -873,7 +878,7 @@ print(merged)
 
 ---
 ## 8. Recursion
-A function that calls ITSELF. Like Russian nesting dolls - each doll contains a smaller doll.
+A function that calls ITSELF. Watch [this](https://youtu.be/ivl5-snqul8).
 Every recursive function needs:
 1. BASE CASE - when to stop (no more calling itself)
 2. RECURSIVE CASE - call itself with a SMALLER problem
@@ -997,8 +1002,19 @@ sys.setrecursionlimit(10000)
 
 ---
 ## 9. `Docstrings` & Type Hints
+**Docstrings and type hints** are complementary tools used in Python to document your code, improve readability, and prevent bugs. Together, they turn your source code into a clean, self-documenting system that Modern IDEs and static analysis tools can leverage.
 
-### Docstrings
+**Comparison Overview:**
+
+| Feature             | Docstrings                                                       | Type Hints                                              |
+| ------------------- | ---------------------------------------------------------------- | ------------------------------------------------------- |
+| **Primary Purpose** | Explains _what_ a block of code does, its context, and behavior. | Explicitly defines _which data types_ are allowed.      |
+| **Syntax**          | Multiline strings (`"""..."""`) placed right below definitions.  | Inline text using colons `:` and arrow indicators `->`. |
+| **Enforcement**     | Not enforced. Purely human-readable.                             | Checked by static analysis tools (like `mypy`).         |
+| **Runtime Access**  | Accessible via `obj.__doc__` or `help(obj)`.                     | Accessible via `obj.__annotations__` or `inspect`.      |
+
+### `Docstrings`
+In Python, a **docstring** (documentation string) is a special string literal placed immediately after the definition of a module, class, function, or method to **describe its purpose and behavior**. Unlike regular comments, docstrings are parsed by the Python interpreter and can be accessed at runtime. Watch [this](https://youtu.be/0YUdYk5E-w4).
 ```python
 # Single line docstring
 def add(a, b):
@@ -1039,6 +1055,9 @@ print(create_user.__doc__)
 ```
 
 ### Type Hints
+**Type hints** in Python are formal annotations that allow you to declare the expected data types of variables, function arguments, and return values. Introduced in **Python 3.5 via PEP 484**, type hints make your code self-documenting, dramatically improve IDE autocomplete, and enable static tools to catch bugs early.
+
+Importantly, **Python does not enforce type hints at runtime**. The Python interpreter completely ignores them during execution, acting as a dynamic language. To catch type mismatches, you must use a separate static type checker like [mypy](https://docs.python.org/3/library/typing.html). Watch [this](https://youtu.be/79zeCq9raY0).
 ```python
 # Type hints tell you WHAT TYPE each parameter expects
 # and WHAT TYPE the function returns
@@ -1143,9 +1162,8 @@ print(result)
 ```
 
 ---
-
-## 10. Putting It All Together - Real Backend Functions
-
+## 10. Putting It All Together
+Real Backend Functions:
 ```python
 # A realistic set of utility functions you'd write
 # in an actual backend project
@@ -1307,7 +1325,6 @@ print(register_user({
 ```
 
 ---
-
 ## Visual Summary
 
 ```

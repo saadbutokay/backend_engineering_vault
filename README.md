@@ -9,7 +9,6 @@ Welcome to the Backend Engineering Vault! This repository contains notes, guides
 1. Download Obsidian for better studying. Link for Obsidian: https://obsidian.md
 2. For Obsidian plugins, go to settings, community plugins and download `code styler`. This is a must.
 3. Follow [[#Contents]] to understand where's what!
-
 Have fun.
 
 ---

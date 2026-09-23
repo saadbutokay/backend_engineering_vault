@@ -1587,7 +1587,6 @@ git commit -m "feat: initialize my first API project"
 ```
 
 ---
-
 ## Phase 1.6 Complete!
 
 **You now have hands-on mastery of:**
