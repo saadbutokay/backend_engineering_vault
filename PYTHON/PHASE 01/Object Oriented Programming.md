@@ -42,7 +42,8 @@ print(alice.get_display())   # Alice <alice@test.com>
 alice.deactivate()
 print(alice.is_active)       # False
 ```
-**OOP bundles DATA and BEHAVIOR together into one unit called a CLASS.** Watch [this](https://youtu.be/IbMDCwVm63M).
+**OOP bundles DATA and BEHAVIOR together into one unit called a CLASS.**
+Watch [this](https://youtu.be/IbMDCwVm63M).
 
 ---
 ## Setup

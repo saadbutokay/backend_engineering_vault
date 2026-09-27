@@ -157,7 +157,8 @@ except StopIteration:
     print("Generator done")
 ```
 
-### Why Generators? Memory Efficiency
+### Why Generators?
+Memory Efficiency.
 ```python
 import sys
 # ─────────────────────────────────────────
