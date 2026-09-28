@@ -1,7 +1,7 @@
 ## `git` commands
 
+**Setup and Configuration:**
 ```bash
-# Setup and Configuration
 git config --global user.name "Name"      # Set the name attached to your commits
 git config --global user.email "Email"    # Set the email attached to your commits
 git config --global core.editor "vim"     # Set your default text editor for commit messages
@@ -10,8 +10,8 @@ git init                                  # Create a new, empty Git repository i
 git clone <url>                           # Download an existing repository from a remote server to your machine
 ```
 
+**Basic Snapshotting:**
 ```bash
-# Basic Snapshotting
 git status                                # Show modified files in working directory, staged for your next commit
 git add <file>                            # Add a specific file's changes to the staging area
 git add .                                 # Add all current directory changes to the staging area
@@ -23,8 +23,8 @@ git rm --cached <file>                    # Stop tracking a file but keep it in 
 git mv <old_path> <new_path>              # Rename a file or move it, and stage the change
 ```
 
+**Undoing Things:**
 ```bash
-# undoing things
 git restore <file>                        # Discard changes in the working directory (revert to last commit)
 git restore --staged <file>               # Remove a file from the staging area, but keep the working directory changes
 git revert <commit_hash>                  # Create a new commit that completely undoes a previous commit
@@ -33,8 +33,8 @@ git reset --hard <commit_hash>            # Move the branch tip backward AND wip
 git clean -fd                             # Forcefully remove all untracked files and directories from your working tree
 ```
 
+**Branching & Merging:**
 ```bash
-# branching & merging
 git branch                                # List all local branches in the repository
 git branch -a                             # List all local and remote-tracking branches
 git branch <branch_name>                  # Create a new branch at the current commit
@@ -48,8 +48,8 @@ git merge <branch_name>                   # Combine the specified branch's histo
 git rebase <base_branch>                  # Reapply your current branch's commits on top of another base branch
 ```
 
+**Sharing & Updating:**
 ```bash
-# sharing & updating
 git remote -v                             # List all connected remote repositories and their URLs
 git remote add <name> <url>               # Connect your local repository to a new remote server
 git remote remove <name>                  # Disconnect a remote server from your local repository
@@ -61,8 +61,8 @@ git push -u <remote> <branch>             # Push and set the remote as the defau
 git push --force                          # Overwrite the remote history with your local history (use with caution)
 ```
 
+**Inspection and History:**
 ```bash
-# Inspection and History
 git log                                   # Show the chronological commit history for the current branch
 git log --oneline                         # Show the commit history compressed into a single line per commit
 git log --graph                           # Draw a text-based graphical representation of the commit history and branches
@@ -73,8 +73,8 @@ git show <commit_hash>                    # Display the metadata and code change
 git blame <file>                          # Show exactly who last modified each line of a file and in which commit
 ```
 
+**Temp Storage (stashing):**
 ```bash
-# temp storage (stashing)
 git stash                                 # Temporarily save modified, tracked files without committing them
 git stash -u                              # Temporarily save both tracked and untracked files
 git stash list                            # Show all currently stashed changes
@@ -83,8 +83,8 @@ git stash apply                           # Apply the most recently stashed chan
 git stash drop                            # Delete the most recently stashed changes from the stash list
 ```
 
+**Advance tools & debugging:**
 ```bash
-# Advance tools & debugging
 git cherry-pick <commit_hash>             # Take the exact changes from a specific commit and apply them to your current branch
 git tag <tag_name>                        # Create a lightweight tag (like a bookmark) at the current commit
 git tag -a <tag_name> -m "Message"        # Create an annotated tag with a message (used for release versions)
@@ -118,7 +118,6 @@ git rm --cached -r folder/       # Stop tracking folder
 
 ---
 ### Common `.gitignore` for Python
-
 ```bash
 # Python
 __pycache__/
@@ -157,7 +156,6 @@ Thumbs.db
 
 ---
 ### Global `.gitignore`
-
 ```bash
 # System Files (OS specific)
 .DS_Store

@@ -20,7 +20,7 @@ Git is a system that:
   - Stores your code safely on the internet (GitHub)
   - Tracks WHO changed WHAT and WHEN
 
-[Click this](https://youtu.be/8JJ101D3knE) to watch it in YouTube. and use [[git Cheatsheet]].
+[Click this](https://youtu.be/8JJ101D3knE) to watch it in YouTube. and use my [[git Cheatsheet]], or the [Official Cheatsheet](https://git-scm.com/cheat-sheet).
 
 ---
 ## 1. Core Concepts
@@ -953,11 +953,6 @@ Git is not optional. It's as fundamental as knowing Python. Every job listing sa
 
 ---
 ## Phase 0 Complete!
-**You've finished the entire Foundation phase:**
-- 0.1 How the Internet Works (`DNS, HTTP, TCP/IP, Client-Server, Status Codes`)
-- 0.2 Development Environment Setup (`Python, VS Code, Terminal, venv, pip, Poetry`)
-- 0.3 Git & Version Control (`commits, branches, GitHub, PRs, .gitignore`)
-
-**You now think like a programmer. You have the tools of a professional developer. You're ready to learn Python itself.**
+**You've finished the entire Foundation phase.** You now think like a programmer. You have the tools of a professional developer. You're ready to learn Python itself.
 
 ---
