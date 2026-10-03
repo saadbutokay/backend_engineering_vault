@@ -41,7 +41,7 @@ code .
 ## 1. Iterators & Generators
 In Python, **iterators and generators are tools used for memory-efficient, lazy evaluation** of data streams. They allow you to process data one item at a time instead of loading entire datasets into memory at once.
 ### Iterators
-In Python, an **iterator** is an object that allows you to traverse through all the elements of a collection (like a list, tuple, or dictionary) **one element at a time**. Technically, a Python iterator is any object that implements the **Iterator Protocol**, which consists of two special methods: `__iter__()` and `__next__()`.
+In Python, an **iterator** is an object that allows you to traverse through all the elements of a collection (like a list, tuple, or dictionary) **one element at a time**. Technically, a Python iterator is any object that implements the **Iterator Protocol**, which consists of two special methods: `__iter__()` and `__next__()`. Watch [this](https://youtu.be/k0D3MQwLn7A).
 
 ```python title:iterator.py
 # What happens when you write: for item in something
@@ -77,7 +77,7 @@ class CountUp:
             raise StopIteration
         value = self.current
         self.current += 1
-        return valus
+        return value
 
 counter = CountUp(1, 5)
 for n in counter:
@@ -85,7 +85,8 @@ for n in counter:
 print()
 
 # Can also use next() manually
-counter2 = CountUp(1, 3)
+counter
+2 = CountUp(1, 3)
 print(next(counter2))   # 1
 print(next(counter2))   # 2
 print(next(counter2))   # 3
@@ -94,7 +95,7 @@ print(next(counter2))   # 3
 ### Generators
 In Python, a **generator** is a special type of function that returns an iterable **generator object**. Unlike regular functions that calculate an entire dataset and return it all at once, generators use the **`yield` keyword** to produce values **one at a time, on demand**.
 
-Because they generate data dynamically instead of storing the entire sequence in memory, they are incredibly **memory-efficient** and are the industry-standard choice for handling large files, data streams, or infinite loops.
+Because they generate data dynamically instead of storing the entire sequence in memory, they are incredibly **memory-efficient** and are the industry-standard choice for handling large files, data streams, or infinite loops. Watch [this](https://youtu.be/G1lJeEIl05o).
 
 ```python title:generators.py
 # Generators are functions that YIELD values one at a time
@@ -237,6 +238,18 @@ print(all_active)  # True
 ```
 
 ### `yield` Advanced: `send()` and Two-Way Communication
+In Python, the `yield` keyword is not just for pulling data out of a generator; it can also **push data back in**. By using the `generator.send()` method, you turn a standard generator into a **coroutine**, enabling dynamic, two-way communication.
+
+When you call `next(gen)` or `gen.send(None)`, the generator runs until it hits a `yield` statement.
+
+The secret to two-way communication is assigning the `yield` expression to a variable:
+```python
+received_value = yield expression
+```
+- **The Pause:** The generator yields `expression` to the caller and pauses.
+- **The Resume:** The caller uses `gen.send(value)`.
+- **The Injection:** The `value` sent by the caller replaces the paused `yield` expression and is assigned to `received_value`.
+
 ```python
 # Generators can also RECEIVE values via send()
 # This is less common but good to know
@@ -286,6 +299,7 @@ A decorator is a function that WRAPS another function adding behavior BEFORE and
 Like a sandwich: bread (before code) + your function + bread (after code)
 ```
 **Used for:** logging, authentication, caching, timing, validation, rate limiting.
+Watch [this](https://youtu.be/U-G-mSd4KAE).
 
 ### Understanding Functions as Objects First
 ```python
@@ -546,14 +560,18 @@ except Exception as e:
 
 ---
 ## 3. Context Managers
+Context managers handle SETUP and TEARDOWN automatically. They guarantee cleanup even if an error occurs.
+In Python, a **context manager** is an object that allocates and releases resources precisely when you need them. They are most commonly used via the **`with` statement**, which guarantees that setup and cleanup actions are performed automatically, even if errors or exceptions occur inside the block. Watch [this](https://youtu.be/Lv1treHIckI).
 
-### What are Context Managers?
+The most classic example is opening a file:
+```python
+with open("example.txt", "w") as file:
+    file.write("Hello, World!")
+# The file is automatically closed here, even if write() raises an exception!
 ```
-Context managers handle SETUP and TEARDOWN automatically.
-They guarantee cleanup even if an error occurs.
 
-The "with" statement uses context managers.
-
+The `with` statement uses context managers.
+```
 Most common use:
   - Opening/closing files
   - Opening/closing database connections
@@ -562,8 +580,19 @@ Most common use:
   - Managing transactions
 ```
 
-### The with Statement
+### Why Use Context Managers?
+Without a context manager, you have to remember to close resources manually. This requires writing verbose `try...finally` blocks:
+```python
+# The manual way (boilerplate heavy)
+file = open("example.txt", "w")
+try:
+    file.write("Hello, World!")
+finally:
+    file.close()  # Ensures the file closes no matter what
+```
 
+### The `with` Statement
+The `with` statement completely eliminates this boilerplate code, preventing resource leaks, file corruption, and broken connections.
 ```python
 # Without context manager — DANGEROUS
 file = open("test.txt", "w")
@@ -583,7 +612,29 @@ with open("test.txt", "w") as file:
 ```
 
 ### Building Context Managers with Classes
+To build a custom context manager using a class in Python, your class must implement two dunder (double underscore) methods: **`__enter__()`** and **`__exit__()`**. This pair of methods governs the setup and teardown phases of a resource when used inside a `with` statement.
+```python
+class CustomContext:
+    def __init__(self, resource_target):
+        # 1. Initialize properties here
+        self.resource_target = resource_target
 
+    def __enter__(self):
+        # 2. Setup the resource (e.g., open a file, connect to a database)
+        print("Setting up resource...")
+        # Whatever is returned here is assigned to the variable after 'as'
+        return self.resource_target 
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        # 3. Teardown/clean up the resource
+        print("Cleaning up resource...")
+        
+        # Handle exceptions if needed
+        # Return True to suppress an internal exception, or False to let it propagate
+        return False
+```
+
+**More Example:**
 ```python
 class DatabaseConnection:
     """Simulate a database connection with proper lifecycle."""
@@ -646,8 +697,31 @@ except ValueError as e:
 # Caught: Something went wrong!
 ```
 
-### Building Context Managers with @contextmanager
+### Building Context Managers with `@contextmanager`
+The **`@contextmanager` decorator** from the standard library's `contextlib` module allows you to build custom context managers using a simple **generator function** instead of writing a full class with `__enter__` and `__exit__` methods. To create a context manager with this decorator, your function must use a `try...finally` block (or `try...except...finally`) and **`yield` exactly once**.
 
+- **Before the `yield`**: Code executes when entering the `with` block (Setup).
+- **The `yield` value**: This is what gets assigned to the variable after the `as` keyword.
+- **After the `yield`**: Code executes when exiting the `with` block (Teardown/Cleanup)
+
+**Basic Example:**
+```python
+from contextlib import contextmanager
+
+@contextmanager
+def my_context_manager():
+    # 1. Setup code goes here (e.g., open a resource, start a timer)
+    print("Entering the context...")
+    
+    try:
+        # 2. Yield control (and optionally, a resource) to the with-block
+        yield "Resource Object"
+    finally:
+        # 3. Teardown code goes here (guaranteed to run)
+        print("Exiting the context and cleaning up...")
+```
+
+**Complete Example:**
 ```python
 from contextlib import contextmanager
 
@@ -728,12 +802,18 @@ with ExitStack() as stack:
 # All 3 files closed automatically
 ```
 
----
+### When to use `@contextmanager` vs Class-based approach
 
+|Metric|`@contextmanager` (Generator)|Class-Based (`__enter__`/`__exit__`)|
+|---|---|---|
+|**Boilerplate**|Very low; utilizes a single function.|Higher; requires a class blueprint.|
+|**Readability**|High for simple resource setups.|High for complex, multi-method structures.|
+|**State Tracking**|Difficult to track complex state across steps.|Easy; values can be stored inside `self` attributes.|
+
+---
 ## 4. Exception Handling
 
 ### The Full `try`/`except`/`else`/`finally`
-
 ```python
 # ─────────────────────────────────────────
 # BASIC STRUCTURE
@@ -1370,7 +1450,7 @@ print(f"Recent: {list(recent_requests)}")  # Always keeps last 5 requests
 
 ---
 
-## 8. Functools Module
+## 8. `Functools` Module
 
 ```python
 from functools import lru_cache, partial, wraps, reduce, cached_property
@@ -1493,7 +1573,7 @@ print(merged)
 
 ---
 
-## 9. Itertools Module
+## 9. `Itertools` Module
 
 ```python
 import itertools
@@ -2104,23 +2184,21 @@ print(route_request(req3))  # Get user 42
 ---
 
 ## Phase 1.4 Complete!
-
 **You now know:**
-
 ```
-✅ Iterators and generators (yield, send, yield from)
-✅ Generator expressions
-✅ Decorators (function, class-based, with arguments, stacking)
-✅ Context managers (__enter__/__exit__, @contextmanager)
-✅ Full exception handling (custom exceptions, chaining)
-✅ File handling (text, JSON, CSV, pathlib)
-✅ Regular expressions (patterns, groups, compile)
-✅ Collections (Counter, defaultdict, namedtuple, deque)
-✅ Functools (lru_cache, partial, reduce, cached_property)
-✅ Itertools (chain, groupby, combinations, product)
-✅ Typing module (Literal, Protocol, TypeVar, Callable)
-✅ Enums (Enum, IntEnum, Flag, methods)
-✅ Walrus operator and match-case
+Iterators and generators (yield, send, yield from)
+Generator expressions
+Decorators (function, class-based, with arguments, stacking)
+Context managers (__enter__/__exit__, @contextmanager)
+Full exception handling (custom exceptions, chaining)
+File handling (text, JSON, CSV, pathlib)
+Regular expressions (patterns, groups, compile)
+Collections (Counter, defaultdict, namedtuple, deque)
+Functools (lru_cache, partial, reduce, cached_property)
+Itertools (chain, groupby, combinations, product)
+Typing module (Literal, Protocol, TypeVar, Callable)
+Enums (Enum, IntEnum, Flag, methods)
+Walrus operator and match-case
 ```
 
 ---
