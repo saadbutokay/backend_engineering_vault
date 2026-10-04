@@ -812,8 +812,9 @@ with ExitStack() as stack:
 
 ---
 ## 4. Exception Handling
-
-### The Full `try`/`except`/`else`/`finally`
+**Exception handling in Python** allows a program to deal with unexpected runtime errors without crashing. It provides a controlled pathway to detect errors, manage them gracefully, and let your program resume execution. Python uses **four primary blocks (`try`, `except`, `else`, `finally`)** and the **`raise` keyword** to manage exceptions. Watch [this](https://youtu.be/j_q6NGOwDJo) and, [this](https://youtu.be/V_NXT2-QIlE).
+### `try`, `except`, `else`, `finally`
+Here is how the four main keywords work together:
 ```python
 # ─────────────────────────────────────────
 # BASIC STRUCTURE
@@ -857,6 +858,68 @@ finally:
 ```
 
 ### Custom Exceptions
+To create a **custom exception** in Python, you need to **define a new class that inherits from the built-in `Exception` class**. Custom exceptions allow you to capture domain-specific errors and give them clear, descriptive names to improve code readability and debugging.
+#### Minimal Custom Exception
+If you only need a descriptive error name without modifying how the error behaves, use a simple `pass` statement.
+```python
+class ValueTooLowError(Exception):
+    """Raised when the input value is below the allowed threshold."""
+    pass
+
+# Usage
+def check_age(age):
+    if age < 18:
+        raise ValueTooLowError("Age must be at least 18.")
+
+try:
+    check_age(15)
+except ValueTooLowError as e:
+    print(f"Caught an error: {e}")
+```
+
+#### Custom Exception with Extra Attributes
+If you want your exception to carry extra context—such as an error code, status code, or the faulty system's data—override the `__init__` method. Always call `super().__init__()` to preserve default exception functionality.
+```python
+class APIError(Exception):
+    def __init__(self, message, status_code):
+        # Pass the main error message to the parent Exception class
+        super().__init__(message)
+        # Store custom data
+        self.status_code = status_code
+
+# Usage
+try:
+    raise APIError("User authentication failed", status_code=401)
+except APIError as e:
+    print(f"Error Message: {e}")
+    print(f"HTTP Status Code: {e.status_code}")
+```
+
+#### Creating an Exception Hierarchy
+When developing complex applications or packages, it is a best practice to create a base custom exception class for your app. Then, inherit from that base class to create more specific errors.
+```python
+# Base application error
+class AppError(Exception):
+    pass
+
+# Specific module errors inheriting from the base error
+class DatabaseConnectionError(AppError):
+    pass
+
+class QueryExecutionError(AppError):
+    pass
+
+# Usage
+try:
+    # Simulating a database problem
+    raise DatabaseConnectionError("Could not connect to replica database.")
+except DatabaseConnectionError:
+    print("Retrying connection...")
+except AppError:
+    print("A general application error occurred.")
+```
+
+#### All Exceptions
 
 ```python
 # Always inherit from Exception (or a more specific exception)
@@ -997,8 +1060,14 @@ except NotFoundError as e:
     print(f"Caused by: {e.__cause__}")  # Database unreachable
 ```
 
----
+#### Best Practices
+- **Inherit from `Exception`, not `BaseException`:** `BaseException` is reserved for system-altering exceptions that you rarely want to catch, like `SystemExit` or `KeyboardInterrupt`.
 
+- **Naming Conventions:** Always end your class name with `Error` (e.g., `ValidationError`, `InvalidTokenError`) to align with Python's naming standards.
+- 
+- **Organize Your Code:** For larger projects, keep all custom error classes together in a dedicated file like `errors.py` or `exceptions.py` to keep your codebase organized.
+
+---
 ## 5. File Handling
 
 ```python
