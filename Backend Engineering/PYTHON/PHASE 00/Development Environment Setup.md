@@ -617,7 +617,7 @@ pip + `requirements.txt` problems:
   ❌ No built-in virtual env management
   ❌ Versions can be loose/unpredictable
 ```
-Poetry solves ALL of this. Industry is moving toward Poetry. Many companies use it. use [[poetry Cheatsheet]] for easy access.
+Poetry solves ALL of this. Industry is moving toward Poetry. Many companies use it. use [[Poetry Cheatsheet]] for easy access.
 
 Poetry advantages:
 ```
