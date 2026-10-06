@@ -1,15 +1,19 @@
-# Backend Engineering Vault
-Welcome to the Backend Engineering Vault! This repository contains notes, guides, codes and my journey to Backend.
+# Engineering Vault
+Welcome to the Engineering Vault! This repository contains notes, guides, codes and my journey to Engineering.
 
 ## What to do?
 1. Download Obsidian for better studying. Link for Obsidian: https://obsidian.md
 2. For Obsidian plugins, go to settings, community plugins and download `code styler`. This is a must.
-3. Follow [[#Contents]] to understand where's what!
+3. You can use my favorite theme `Typewriter` from the settings. (Optional)
+4. Follow [[#Contents]] to understand where's what!
+
 Have fun.
 
 ---
 ## Contents
-1. [[PYTHON ROADMAP]]
+All the things that this repo has!
+### Backend Engineering
+1. [[Python]]
 
 ---
 # Interesting fact on ReadMe
