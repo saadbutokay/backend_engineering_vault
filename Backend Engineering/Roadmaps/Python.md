@@ -1,3 +1,6 @@
+This roadmap is divided into phases. Each phase builds on the previous one. We will go topic by topic.
+
+---
 ## PHASE 0: FOUNDATIONS
 **Time:** Weeks 1–4
 *"Learn to think like a programmer."*
