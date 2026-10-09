@@ -38,7 +38,6 @@ touch algorithms.py
 ## 1. Searching Algorithms
 
 ### Linear Search
-
 ```python
 # algorithms.py
 from typing import Any, List, Optional, Tuple

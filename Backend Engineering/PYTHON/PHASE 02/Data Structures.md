@@ -61,7 +61,6 @@ THIS is why data structures matter.
 
 ---
 ## Setup
-
 ```bash
 mkdir ~/projects/data_structures
 cd ~/projects/data_structures
