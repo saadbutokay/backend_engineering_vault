@@ -22,18 +22,18 @@ This roadmap is divided into phases. Each phase builds on the previous one. We w
 ---
 ## Phase 2: Object-Oriented Programming in `C#`
 
-2.1 Classes and objects — fields, properties, constructors  
-2.2 Access modifiers (public, private, protected, internal, protected internal, private protected)  
-2.3 Encapsulation and properties (auto-properties, computed properties, init-only)  
-2.4 Inheritance (base keyword, constructor chaining)  
-2.5 Polymorphism (virtual, override, new keyword hiding)  
-2.6 Abstract classes and methods  
-2.7 Interfaces (explicit implementation, default interface methods)  
-2.8 Sealed classes and methods  
-2.9 Static classes, static members, static constructors  
-2.10 Composition vs inheritance  
-2.11 Records (record class, record struct, with expressions)  
-2.12 Object initializers and anonymous types
+1. [[Classes and Objects]]
+2. [[Access Modifiers]]
+3. [[Encapsulation and Properties]]
+4. [[Inheritance]]
+5. [[Polymorphism]]
+6. [[Abstract Classes and Methods]]
+7. [[Interfaces]]
+8. [[Sealed Classes and Methods]]
+9. [[Static Classes, Static Members, and Static Constructors]]
+10. [[Composition vs. Inheritance]]
+11. [[Records]]
+12. [[Object Initializers and Anonymous Types]]
 
 ---
 ## Phase 3: Intermediate `C#` Concepts
